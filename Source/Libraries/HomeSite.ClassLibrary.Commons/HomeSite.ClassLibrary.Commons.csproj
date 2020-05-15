@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>netstandard2.0</TargetFramework>
+        <Version>0.0.1</Version>
+	    <DocumentationFile>../../../Documentation/Source/$(AssemblyName).xml</DocumentationFile>	  
+    </PropertyGroup>
+
+	<ItemGroup>
+		<_findDllFile Include="../../../Documentation/Source/XmlToMarkdown.dll" />
+		<_findJsonFile Include="../../../Documentation/Source/XmlToMarkdown.runtimeconfig.json" />
+		<_findLibraryFile Include="../../../Documentation/Source/HomeSite.ClassLibrary.Commons.dll" />
+	</ItemGroup>
+
+	<Target Name="BuildXmlToMarkdown" AfterTargets="AfterBuild" DependsOnTargets="AfterBuild"
+			Condition="Exists('@(_findDllFile)')
+                 AND Exists('@(_findJsonFile)') 
+                 AND Exists('@(_findLibraryFile)')" >
+		<Exec Command="cd ../../../Documentation/Source/"  />
+		<Exec Command="dotnet XmlToMarkdown.dll Transform.xsl" WorkingDirectory="../../../Documentation/Source/" />
+	</Target>
+
+</Project>

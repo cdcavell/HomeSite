@@ -1,0 +1,47 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<OutputType>Exe</OutputType>
+		<TargetFramework>netcoreapp3.1</TargetFramework>
+		<DocumentationFile>../../../Documentation/Source/$(AssemblyName).xml</DocumentationFile>
+		<Version>0.0.1</Version>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\..\Libraries\HomeSite.ClassLibrary.Commons\HomeSite.ClassLibrary.Commons.csproj" />
+	</ItemGroup>
+
+	<Target Name="DeleteXmlToMarkdown" AfterTargets="BeforeBuild" DependsOnTargets="BeforeBuild">
+		<ItemGroup>
+			<_deleteExecFile Include="../../../Documentation/Source/$(TargetFileName)" />
+			<_deleteRuntimeFile Include="../../../Documentation/Source/XmlToMarkdown.runtimeconfig.json" />
+			<_deleteLibraryFile Include="../../../Documentation/Source/HomeSite.ClassLibrary.Commons.dll" />
+		</ItemGroup>
+		<Delete Files="@(_deleteExecFile)" Condition="Exists(@(_deleteExecFile))" />
+		<Delete Files="@(_deleteRuntimeFile)" Condition="Exists(@(_deleteRuntimeFile))" />
+		<Delete Files="@(_deleteLibraryFile)" Condition="Exists(@(_deleteLibraryFile))" />
+	</Target>
+
+	<Target Name="CopyXmlToMarkdown" AfterTargets="AfterBuild" DependsOnTargets="DeleteXmlToMarkdown">
+		<ItemGroup>
+			<_copyExecFile Include="$(TargetDir)$(TargetFileName)" />
+			<_copyRuntimeFile Include="$(TargetDir)XmlToMarkdown.runtimeconfig.json" />
+			<_copyLibraryFile Include="$(TargetDir)HomeSite.ClassLibrary.Commons.dll" />
+		</ItemGroup>
+		<Copy SourceFiles="@(_copyExecFile)" DestinationFolder="../../../Documentation/Source/" />
+		<Copy SourceFiles="@(_copyRuntimeFile)" DestinationFolder="../../../Documentation/Source/" />
+		<Copy SourceFiles="@(_copyLibraryFile)" DestinationFolder="../../../Documentation/Source/" />
+	</Target>
+
+	<ItemGroup>
+		<_findDllFile Include="../../../Documentation/Source/XmlToMarkdown.dll" />
+		<_findJsonFile Include="../../../Documentation/Source/XmlToMarkdown.runtimeconfig.json" />
+		<_findLibraryFile Include="../../../Documentation/Source/HomeSite.ClassLibrary.Commons.dll" />
+	</ItemGroup>
+
+	<Target Name="BuildXmlToMarkdown" AfterTargets="CopyXmlToMarkdown" DependsOnTargets="CopyXmlToMarkdown" Condition="Exists('@(_findDllFile)')&#xD;&#xA;                 AND Exists('@(_findJsonFile)') &#xD;&#xA;                 AND Exists('@(_findLibraryFile)')">
+		<Exec Command="cd ../../../Documentation/Source/" />
+		<Exec Command="dotnet XmlToMarkdown.dll Transform.xsl" WorkingDirectory="../../../Documentation/Source/" />
+	</Target>
+
+</Project>

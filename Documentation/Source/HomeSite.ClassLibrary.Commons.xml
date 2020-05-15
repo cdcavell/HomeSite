@@ -1,0 +1,156 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>HomeSite.ClassLibrary.Commons</name>
+    </assembly>
+    <members>
+        <member name="T:HomeSite.ClassLibrary.Commons.AsciiCodes">
+            <summary>
+            Static class for converting ascii decimal value to string equivalent.
+            </summary>
+            <revision>
+            __Revisions:__~~
+            | Contributor | Build | Revison Date | Description |~
+            |-------------|-------|--------------|-------------|~
+            | Christopher D. Cavell | 0.0.1 | 05/14/2020 | Initial build |~ 
+            </revision>
+        </member>
+        <member name="F:HomeSite.ClassLibrary.Commons.AsciiCodes.NUL">
+            <value>(null)</value>
+        </member>
+        <member name="F:HomeSite.ClassLibrary.Commons.AsciiCodes.SOH">
+            <value>(start of heading)</value>
+        </member>
+        <member name="F:HomeSite.ClassLibrary.Commons.AsciiCodes.STX">
+            <value>(start of text)</value>
+        </member>
+        <member name="F:HomeSite.ClassLibrary.Commons.AsciiCodes.ETX">
+            <value>(end of text)</value>
+        </member>
+        <member name="F:HomeSite.ClassLibrary.Commons.AsciiCodes.EOT">
+            <value>(end of transmission)</value>
+        </member>
+        <member name="F:HomeSite.ClassLibrary.Commons.AsciiCodes.ENQ">
+            <value>(enquiry)</value>
+        </member>
+        <member name="F:HomeSite.ClassLibrary.Commons.AsciiCodes.ACK">
+            <value>(acknowledge)</value>
+        </member>
+        <member name="F:HomeSite.ClassLibrary.Commons.AsciiCodes.BEL">
+            <value>(bell)</value>
+        </member>
+        <member name="F:HomeSite.ClassLibrary.Commons.AsciiCodes.BS">
+            <value>(backspace)</value>
+        </member>
+        <member name="F:HomeSite.ClassLibrary.Commons.AsciiCodes.TAB">
+            <value>(horizontal tab)</value>
+        </member>
+        <member name="F:HomeSite.ClassLibrary.Commons.AsciiCodes.LF">
+            <value>(NL line feed, new line)</value>
+        </member>
+        <member name="F:HomeSite.ClassLibrary.Commons.AsciiCodes.VT">
+            <value>(vertical tab)</value>
+        </member>
+        <member name="F:HomeSite.ClassLibrary.Commons.AsciiCodes.FF">
+            <value>(NP form feed, new page)</value>
+        </member>
+        <member name="F:HomeSite.ClassLibrary.Commons.AsciiCodes.CR">
+            <value>(carriage return)</value>
+        </member>
+        <member name="F:HomeSite.ClassLibrary.Commons.AsciiCodes.SO">
+            <value>(shift out)</value>
+        </member>
+        <member name="F:HomeSite.ClassLibrary.Commons.AsciiCodes.SI">
+            <value>(shift in)</value>
+        </member>
+        <member name="F:HomeSite.ClassLibrary.Commons.AsciiCodes.DLE">
+            <value>(data link escape)</value>
+        </member>
+        <member name="F:HomeSite.ClassLibrary.Commons.AsciiCodes.DC1">
+            <value>(device control 1)</value>
+        </member>
+        <member name="F:HomeSite.ClassLibrary.Commons.AsciiCodes.DC2">
+            <value>(device control 2)</value>
+        </member>
+        <member name="F:HomeSite.ClassLibrary.Commons.AsciiCodes.DC3">
+            <value>(device control 3)</value>
+        </member>
+        <member name="F:HomeSite.ClassLibrary.Commons.AsciiCodes.DC4">
+            <value>(device control 4)</value>
+        </member>
+        <member name="F:HomeSite.ClassLibrary.Commons.AsciiCodes.NAK">
+            <value>(negative acknowledge)</value>
+        </member>
+        <member name="F:HomeSite.ClassLibrary.Commons.AsciiCodes.SYN">
+            <value>(synchronous idle)</value>
+        </member>
+        <member name="F:HomeSite.ClassLibrary.Commons.AsciiCodes.ETB">
+            <value>(end of trans. block)</value>
+        </member>
+        <member name="F:HomeSite.ClassLibrary.Commons.AsciiCodes.CAN">
+            <value>(cancel)</value>
+        </member>
+        <member name="F:HomeSite.ClassLibrary.Commons.AsciiCodes.EM">
+            <value>(end of medium)</value>
+        </member>
+        <member name="F:HomeSite.ClassLibrary.Commons.AsciiCodes.SUB">
+            <value>(substitute)</value>
+        </member>
+        <member name="F:HomeSite.ClassLibrary.Commons.AsciiCodes.ESC">
+            <value>(escape)</value>
+        </member>
+        <member name="F:HomeSite.ClassLibrary.Commons.AsciiCodes.FS">
+            <value>(file separator)</value>
+        </member>
+        <member name="F:HomeSite.ClassLibrary.Commons.AsciiCodes.GS">
+            <value>(group separator)</value>
+        </member>
+        <member name="F:HomeSite.ClassLibrary.Commons.AsciiCodes.RS">
+            <value>(record separator)</value>
+        </member>
+        <member name="F:HomeSite.ClassLibrary.Commons.AsciiCodes.US">
+            <value>(unit separator)</value>
+        </member>
+        <member name="F:HomeSite.ClassLibrary.Commons.AsciiCodes.CRLF">
+            <value>(carriage return) + (NL line feed, new line)</value>
+        </member>
+        <member name="M:HomeSite.ClassLibrary.Commons.AsciiCodes.ToString(System.Int32)">
+            <summary>
+            Method to return string value of given ascii decimal
+            </summary>
+            <param name="dec">int</param>
+            <returns>string</returns>
+            <method>ToString(int dec)</method>
+        </member>
+        <member name="T:HomeSite.ClassLibrary.Commons.Logging.ConsoleLog">
+            <summary>
+            Static console logging class.
+            </summary>
+            <revision>
+            __Revisions:__~~
+            | Contributor | Build | Revison Date | Description |~
+            |-------------|-------|--------------|-------------|~
+            | Christopher D. Cavell | 0.0.1 | 05/14/2020 | Initial build |~ 
+            </revision>
+        </member>
+        <member name="T:HomeSite.ClassLibrary.Commons.Xml.Transform">
+            <summary>
+            Class to perform XSLT Transformation
+            </summary>
+            <revision>
+            __Revisions:__~~
+            | Contributor | Build | Revison Date | Description |~
+            |-------------|-------|--------------|-------------|~
+            | Christopher D. Cavell | 0.0.1 | 05/14/2020 | Initial build |~ 
+            </revision>
+        </member>
+        <member name="M:HomeSite.ClassLibrary.Commons.Xml.Transform.Write(System.String,System.String,System.String)">
+            <summary>
+            Method to perform XSLT Transformation and write out file
+            </summary>
+            <param name="inputXslt">string</param>
+            <param name="inputXml">string</param>
+            <param name="outputFile">string</param>
+        </member>
+    </members>
+</doc>
