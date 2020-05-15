@@ -1,6 +1,6 @@
 ﻿
 <a name='HomeSite.ClassLibrary.Commons.AsciiCodes'></a>
-		
+
 ## HomeSite.ClassLibrary.Commons.AsciiCodes
 Static class for converting ascii decimal value to string equivalent.
 
@@ -64,7 +64,7 @@ string
 
 
 <a name='HomeSite.ClassLibrary.Commons.Logging.ConsoleLog'></a>
-		
+
 ## HomeSite.ClassLibrary.Commons.Logging.ConsoleLog
 Static console logging class.
 
@@ -80,7 +80,7 @@ __Revisions:__
 
 
 <a name='HomeSite.ClassLibrary.Commons.Xml.Transform'></a>
-		
+
 ## HomeSite.ClassLibrary.Commons.Xml.Transform
 Class to perform XSLT Transformation
 

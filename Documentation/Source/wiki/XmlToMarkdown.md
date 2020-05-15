@@ -1,6 +1,6 @@
 ﻿
 <a name='XmlToMarkdown.Program'></a>
-		
+
 ## XmlToMarkdown.Program
 Command console program to transform all xml files in current directory utilizing supplied template file to Wiki Markdown files. Usage: dotnet XmlToMarkdown.dll [Template file]
 
