@@ -184,7 +184,7 @@
             Method to remove "Carriage Return" and "Line Feed" as well as Html filtering to provide proper neutralization.
             </summary>
             <param name="value">this string</param>
-            <returns>strin</returns>
+            <returns>string</returns>
             <method>string Clean(this string value)</method>
         </member>
     </members>

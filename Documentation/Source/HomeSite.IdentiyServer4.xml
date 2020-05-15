@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>HomeSite.IdentiyServer4</name>
+    </assembly>
+    <members>
+        <member name="T:HomeSite.IdentiyServer4.Program">
+            <summary>
+            Entry point class
+            </summary>
+            <revision>
+            __Revisions:__~~
+            | Contributor | Build | Revison Date | Description |~
+            |-------------|-------|--------------|-------------|~
+            | Christopher D. Cavell | 0.0.1 | 05/15/2020 | Initial build |~ 
+            </revision>
+        </member>
+        <member name="M:HomeSite.IdentiyServer4.Program.Main(System.String[])">
+            <summary>
+            Entry point method
+            </summary>
+            <param name="args">string[]</param>
+            <method>Main(string[] args)</method>
+        </member>
+        <member name="M:HomeSite.IdentiyServer4.Program.CreateHostBuilder(System.String[])">
+            <summary>
+            Host Builder configuration
+            </summary>
+            <param name="args">string[]</param>
+            <returns>IHostBuilder</returns>
+            <method>CreateHostBuilder(string[] args)</method>
+        </member>
+    </members>
+</doc>

@@ -148,7 +148,7 @@ Method to remove "Carriage Return" and "Line Feed" as well as Html filtering to 
 |value|this string|
 
 #### Returns:
-strin 
+string 
 ## 
 
 ( [Home](Home) )
