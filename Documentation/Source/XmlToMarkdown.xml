@@ -18,5 +18,12 @@
             | Christopher D. Cavell | 0.0.1 | 05/14/2020 | Initial build |~ 
             </revision>
         </member>
+        <member name="M:XmlToMarkdown.Program.Main(System.String[])">
+            <summary>
+            Entry point method
+            </summary>
+            <param name="args">string[]</param>
+            <method>Main(string[] args)</method>
+        </member>
     </members>
 </doc>

@@ -11,6 +11,15 @@ __Revisions:__
 | Christopher D. Cavell | 0.0.1 | 05/14/2020 | Initial build |
 
 
+### Methods:
+#### Main(string[] args)
+
+Entry point method
+
+|Parameters| |
+| - | - |
+|args|string[]|
+## 
 
 ( [Home](Home) )
 

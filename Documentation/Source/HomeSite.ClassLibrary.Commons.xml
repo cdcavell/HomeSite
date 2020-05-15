@@ -130,8 +130,15 @@
             __Revisions:__~~
             | Contributor | Build | Revison Date | Description |~
             |-------------|-------|--------------|-------------|~
-            | Christopher D. Cavell | 0.0.1 | 05/14/2020 | Initial build |~ 
+            | Christopher D. Cavell | 0.0.1 | 05/15/2020 | Initial build |~ 
             </revision>
+        </member>
+        <member name="M:HomeSite.ClassLibrary.Commons.Logging.ConsoleLog.Exception(System.Exception)">
+            <summary>
+            Method to write formated exception information to console
+            </summary>
+            <param name="exception">Exception</param>
+            <method>Exception(Exception exception)</method>
         </member>
         <member name="T:HomeSite.ClassLibrary.Commons.Xml.Transform">
             <summary>
@@ -151,6 +158,34 @@
             <param name="inputXslt">string</param>
             <param name="inputXml">string</param>
             <param name="outputFile">string</param>
+            <method>Write(string inputXslt, string inputXml, string outputFile)</method>
+        </member>
+        <member name="T:System.StringExtensions">
+            <summary>
+            Extension methods for existing string types.
+            </summary>
+            <revision>
+            __Revisions:__~~
+            | Contributor | Build | Revison Date | Description |~
+            |-------------|-------|--------------|-------------|~
+            | Christopher D. Cavell | 0.0.1 | 05/15/2020 | Initial build |~ 
+            </revision>
+        </member>
+        <member name="M:System.StringExtensions.IsValidEmail(System.String)">
+            <summary>
+            Method to determine if string is a valid email address
+            </summary>
+            <param name="email">this string</param>
+            <returns>bool</returns>
+            <method>IsValidEmail(this string email)</method>
+        </member>
+        <member name="M:System.StringExtensions.Clean(System.String)">
+            <summary>
+            Method to remove "Carriage Return" and "Line Feed" as well as Html filtering to provide proper neutralization.
+            </summary>
+            <param name="value">this string</param>
+            <returns>strin</returns>
+            <method>string Clean(this string value)</method>
         </member>
     </members>
 </doc>

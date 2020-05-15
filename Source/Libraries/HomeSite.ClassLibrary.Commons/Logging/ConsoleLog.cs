@@ -9,10 +9,15 @@ namespace HomeSite.ClassLibrary.Commons.Logging
     /// __Revisions:__~~
     /// | Contributor | Build | Revison Date | Description |~
     /// |-------------|-------|--------------|-------------|~
-    /// | Christopher D. Cavell | 0.0.1 | 05/14/2020 | Initial build |~ 
+    /// | Christopher D. Cavell | 0.0.1 | 05/15/2020 | Initial build |~ 
     /// </revision>
     public static class ConsoleLog
     {
+        /// <summary>
+        /// Method to write formated exception information to console
+        /// </summary>
+        /// <param name="exception">Exception</param>
+        /// <method>Exception(Exception exception)</method>
         public static void Exception(Exception exception)
         {
             Console.WriteLine(AsciiCodes.CRLF + "Exception thrown in application");

@@ -22,6 +22,7 @@ namespace HomeSite.ClassLibrary.Commons.Xml
         /// <param name="inputXslt">string</param>
         /// <param name="inputXml">string</param>
         /// <param name="outputFile">string</param>
+        /// <method>Write(string inputXslt, string inputXml, string outputFile)</method>
         public static void Write(string inputXslt, string inputXml, string outputFile)
         {
             XslCompiledTransform transform = new XslCompiledTransform();

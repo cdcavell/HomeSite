@@ -14,4 +14,5 @@ _Current Source Docoumentation can be found __[here](https://github.com/cdcavell
 
 | Build | Date | Description |
 |-------|------|-------------|
+| 0.0.1 | 05/15/2020 | __Feature build__ <br /> - _Addition Libraries_ [__System.StringExtensions__](HomeSite.ClassLibrary.Commons#System.StringExtensions) <br /> - _Addition Libraries_ [__HomeSite.ClassLibrary.Commons.Xml.Transform__](HomeSite.ClassLibrary.Commons#HomeSite.ClassLibrary.Commons.Xml.Transform) <br /> - _Addition Libraries_ [__HomeSite.ClassLibrary.Commons.Logging.ConsoleLog__](HomeSite.ClassLibrary.Commons#HomeSite.ClassLibrary.Commons.Logging.ConsoleLog) <br /> - _Addition Libraries_ [__HomeSite.ClassLibrary.Commons.AsciiCodes__](HomeSite.ClassLibrary.Commons#HomeSite.ClassLibrary.Commons.AsciiCodes) <br /> - _Addition Console_ [__XmlToMarkdown.Program__](XmlToMarkdown#XmlToMarkdown.Program) |
 | 0.0.0 | 05/14/2020 | __Initial commit__ |

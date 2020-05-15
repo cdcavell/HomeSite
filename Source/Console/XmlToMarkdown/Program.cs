@@ -24,6 +24,11 @@ namespace XmlToMarkdown
     {
         private static List<KeyValuePair<string, string>> kvpList = new List<KeyValuePair<string, string>>();
 
+        /// <summary>
+        /// Entry point method
+        /// </summary>
+        /// <param name="args">string[]</param>
+        /// <method>Main(string[] args)</method>
         static void Main(string[] args)
         {
             if (args.Length != 1)

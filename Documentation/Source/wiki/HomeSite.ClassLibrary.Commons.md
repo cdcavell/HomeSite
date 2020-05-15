@@ -72,9 +72,18 @@ __Revisions:__
 
 | Contributor | Build | Revison Date | Description |
 |-------------|-------|--------------|-------------|
-| Christopher D. Cavell | 0.0.1 | 05/14/2020 | Initial build |
+| Christopher D. Cavell | 0.0.1 | 05/15/2020 | Initial build |
 
 
+### Methods:
+#### Exception(Exception exception)
+
+Method to write formated exception information to console
+
+|Parameters| |
+| - | - |
+|exception|Exception|
+## 
 
 ( [Home](Home) )
 
@@ -92,7 +101,7 @@ __Revisions:__
 
 
 ### Methods:
-#### Write(System.String,System.String,System.String)
+#### Write(string inputXslt, string inputXml, string outputFile)
 
 Method to perform XSLT Transformation and write out file
 
@@ -101,6 +110,45 @@ Method to perform XSLT Transformation and write out file
 |inputXslt|string|
 |inputXml|string|
 |outputFile|string|
+## 
+
+( [Home](Home) )
+
+
+<a name='System.StringExtensions'></a>
+
+## System.StringExtensions
+Extension methods for existing string types.
+
+__Revisions:__
+
+| Contributor | Build | Revison Date | Description |
+|-------------|-------|--------------|-------------|
+| Christopher D. Cavell | 0.0.1 | 05/15/2020 | Initial build |
+
+
+### Methods:
+#### IsValidEmail(this string email)
+
+Method to determine if string is a valid email address
+
+|Parameters| |
+| - | - |
+|email|this string|
+
+#### Returns:
+bool 
+## 
+#### string Clean(this string value)
+
+Method to remove "Carriage Return" and "Line Feed" as well as Html filtering to provide proper neutralization.
+
+|Parameters| |
+| - | - |
+|value|this string|
+
+#### Returns:
+strin 
 ## 
 
 ( [Home](Home) )
