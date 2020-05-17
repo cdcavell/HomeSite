@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+      <TargetFramework>netcoreapp3.1</TargetFramework>
+	  <DocumentationFile>../../../Documentation/Source/$(AssemblyName).xml</DocumentationFile>
+  </PropertyGroup>
+
+
+	<ItemGroup>
+		<_findDllFile Include="../../../Documentation/Source/XmlToMarkdown.dll" />
+		<_findJsonFile Include="../../../Documentation/Source/XmlToMarkdown.runtimeconfig.json" />
+		<_findLibraryFile Include="../../../Documentation/Source/HomeSite.ClassLibrary.Commons.dll" />
+	</ItemGroup>
+
+	<Target Name="BuildXmlToMarkdown" AfterTargets="AfterBuild" DependsOnTargets="AfterBuild" Condition="Exists('@(_findDllFile)')&#xD;&#xA;                 AND Exists('@(_findJsonFile)') &#xD;&#xA;                 AND Exists('@(_findLibraryFile)')">
+		<Exec Command="cd ../../../Documentation/Source/" />
+		<Exec Command="dotnet XmlToMarkdown.dll Transform.xsl" WorkingDirectory="../../../Documentation/Source/" />
+	</Target>
+
+</Project>

@@ -63,26 +63,110 @@ string
 ( [Home](Home) )
 
 
-<a name='HomeSite.ClassLibrary.Commons.Logging.ConsoleLog'></a>
+<a name='HomeSite.ClassLibrary.Commons.Logging.Logger'></a>
 
-## HomeSite.ClassLibrary.Commons.Logging.ConsoleLog
-Static console logging class.
+## HomeSite.ClassLibrary.Commons.Logging.Logger
+Global application logger
 
 __Revisions:__
 
 | Contributor | Build | Revison Date | Description |
 |-------------|-------|--------------|-------------|
-| Christopher D. Cavell | 0.0.1 | 05/15/2020 | Initial build |
+| Christopher D. Cavell | 0.0.1 | 05/16/2020 | Initial build |
 
 
 ### Methods:
-#### Exception(Exception exception)
+#### Logger(ILogger logger)
 
-Method to write formated exception information to console
+Initialize logger class
+
+|Parameters| |
+| - | - |
+|logger|ILogger|
+## 
+#### Information(string message)
+
+Information logging
+
+|Parameters| |
+| - | - |
+|message|string|
+## 
+#### Debug(string message)
+
+Debug logging
+
+|Parameters| |
+| - | - |
+|message|string|
+## 
+#### Debug(string message)
+
+Debug logging
+
+|Parameters| |
+| - | - |
+|message|string|
+## 
+#### Warning(string message)
+
+Warning logging
+
+|Parameters| |
+| - | - |
+|message|string|
+## 
+#### Critical(Exception exception, string message)
+
+Warning logging
 
 |Parameters| |
 | - | - |
 |exception|Exception|
+|message|string|
+## 
+#### Exception(Exception exception, string message = null)
+
+Exception logging
+
+|Parameters| |
+| - | - |
+|exception|Exception|
+|message|string|
+## 
+#### Log<TState>(LogLevel logLevel, EventId eventId, TState state, Exception exception, Func<TState, Exception, string> formatter)
+
+Implementation of ILogger method
+
+|Parameters| |
+| - | - |
+|logLevel|LogLevel|
+|eventId|EventId|
+|state|TState|
+|exception|Exception|
+|formatter|Func<TState, Exception, string>|
+## 
+#### IsEnabled(LogLevel logLevel)
+
+Implementation of ILogger method
+
+|Parameters| |
+| - | - |
+|logLevel|LogLevel|
+
+#### Returns:
+bool 
+## 
+#### BeginScope<TState>(TState state)
+
+Implementation of ILogger method
+
+|Parameters| |
+| - | - |
+|state|TState|
+
+#### Returns:
+IDisposable 
 ## 
 
 ( [Home](Home) )
@@ -110,6 +194,35 @@ Method to perform XSLT Transformation and write out file
 |inputXslt|string|
 |inputXml|string|
 |outputFile|string|
+## 
+
+( [Home](Home) )
+
+
+<a name='System.Linq.EnumerableExtentions'></a>
+
+## System.Linq.EnumerableExtentions
+Extension methods for existing Enumerable types.
+
+__Revisions:__
+
+| Contributor | Build | Revison Date | Description |
+|-------------|-------|--------------|-------------|
+| Christopher D. Cavell | 0.0.1 | 05/16/2020 | Initial build |
+
+
+### Methods:
+#### DistinctBy<TSource, TKey>(this IEnumerable<TSource> source, Func<TSource, TKey> keySelector)
+
+Method to determine if string is a valid email address
+
+|Parameters| |
+| - | - |
+|source|this IEnumerable<TSource>|
+|keySelector|Func<TSource, TKey>|
+
+#### Returns:
+IEnumerable<TSource> 
 ## 
 
 ( [Home](Home) )

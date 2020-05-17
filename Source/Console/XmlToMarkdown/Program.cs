@@ -1,5 +1,4 @@
 ﻿using HomeSite.ClassLibrary.Commons;
-using HomeSite.ClassLibrary.Commons.Logging;
 using HomeSite.ClassLibrary.Commons.Xml;
 using System;
 using System.Collections.Generic;
@@ -18,7 +17,7 @@ namespace XmlToMarkdown
     /// __Revisions:__~~
     /// | Contributor | Build | Revison Date | Description |~
     /// |-------------|-------|--------------|-------------|~
-    /// | Christopher D. Cavell | 0.0.1 | 05/14/2020 | Initial build |~ 
+    /// | Christopher D. Cavell | 0.0.1 | 05/16/2020 | Initial build |~ 
     /// </revision>
     class Program
     {
@@ -79,13 +78,13 @@ namespace XmlToMarkdown
             }
             catch (Exception ex)
             {
-                ConsoleLog.Exception(ex);
+                Console.WriteLine(ex);
             }
         }
 
         private static void WriteHome()
         {
-            Console.Write(" Generating Home.md");
+            Console.WriteLine(" Generating Home.md");
             string homeFile = Directory.GetCurrentDirectory() + "/wiki/Home.md";
             if (File.Exists(homeFile))
                 File.Delete(homeFile);
@@ -106,7 +105,7 @@ namespace XmlToMarkdown
 
             File.WriteAllText(homeFile, sb.ToString());
 
-            Console.WriteLine(" --> Generated Home.md");
+            Console.WriteLine(" Generated Home.md");
         }
 
         private static void ClearWiki()
@@ -114,6 +113,7 @@ namespace XmlToMarkdown
             DirectoryInfo di = new DirectoryInfo(Directory.GetCurrentDirectory() + "/wiki/");
             foreach (FileInfo file in di.EnumerateFiles())
             {
+                Console.WriteLine(" Removing " + file.FullName);
                 file.Delete();
             }
         }

@@ -8,7 +8,7 @@ __Revisions:__
 
 | Contributor | Build | Revison Date | Description |
 |-------------|-------|--------------|-------------|
-| Christopher D. Cavell | 0.0.1 | 05/14/2020 | Initial build |
+| Christopher D. Cavell | 0.0.1 | 05/16/2020 | Initial build |
 
 
 ### Methods:

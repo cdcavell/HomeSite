@@ -1,0 +1,823 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>HomeSite.ClassLibrary.Web</name>
+    </assembly>
+    <members>
+        <member name="T:Microsoft.AspNetCore.Http.HttpContextExtensions">
+            <summary>
+            Extension methods for existing HttpContext types.
+            </summary>
+            <revision>
+            __Revisions:__~~
+            | Contributor | Build | Revison Date | Description |~
+            |-------------|-------|--------------|-------------|~
+            | Christopher D. Cavell | 0.0.1 | 05/16/2020 | Initial build |~ 
+            </revision>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Http.HttpContextExtensions.GetAbsoluteUri(Microsoft.AspNetCore.Http.HttpContext)">
+            <summary>
+            Method to return Absolute Uri for HttpContext
+            </summary>
+            <param name="httpContext">this HttpContext</param>
+            <returns>Uri</returns>
+            <method>GetAbsoluteUri(this HttpContext httpContext)</method>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Http.HttpContextExtensions.GetAbsoluteDomain(Microsoft.AspNetCore.Http.HttpContext)">
+            <summary>
+            Method to return Absolute Domain for HttpContext
+            </summary>
+            <param name="httpContext">this HttpContext</param>
+            <returns>string</returns>
+            <method>GetAbsoluteDomain(this HttpContext httpContext)</method>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Http.HttpContextExtensions.GetAbsoluteUrl(Microsoft.AspNetCore.Http.HttpContext)">
+            <summary>
+            Similar methods for Url/AbsolutePath which internally call GetAbsoluteUri
+            </summary>
+            <param name="httpContext">this HttpContext</param>
+            <returns>string</returns>
+            <method>GetAbsoluteUrl(this HttpContext httpContext)</method>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Http.HttpContextExtensions.GetAbsolutePath(Microsoft.AspNetCore.Http.HttpContext)">
+            <summary>
+            Method to return Absolute Path HttpContext
+            </summary>
+            <param name="httpContext">this HttpContext</param>
+            <returns>string</returns>
+            <method>GetAbsolutePath(this HttpContext httpContext)</method>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Http.HttpContextExtensions.IsAjaxRequest(Microsoft.AspNetCore.Http.HttpContext)">
+            <summary>
+            Method to return if HttpContext is an AJax request
+            </summary>
+            <param name="httpContext">this HttpContext</param>
+            <returns>bool</returns>
+            <method>IsAjaxRequest(this HttpContext httpContext)</method>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Http.HttpContextExtensions.GetRemoteAddress(Microsoft.AspNetCore.Http.HttpContext)">
+            <summary>
+            Method to return IPAddress of reomote address for HttpContext
+            </summary>
+            <param name="httpContext">HttpContext</param>
+            <returns>IPAddress</returns>
+            <method>GetRemoteAddress(this HttpContext httpContext)</method>
+        </member>
+        <member name="T:Microsoft.AspNetCore.Http.HttpRequestExtensions">
+            <summary>
+            Extension methods for existing HttpRequest types.
+            </summary>
+            <revision>
+            __Revisions:__~~
+            | Contributor | Build | Revison Date | Description |~
+            |-------------|-------|--------------|-------------|~
+            | Christopher D. Cavell | 0.0.1 | 05/16/2020 | Initial build |~ 
+            </revision>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Http.HttpRequestExtensions.IsLocalUrl(Microsoft.AspNetCore.Http.HttpRequest,System.String)">
+            <summary>
+            Method to determine if string is a local url
+            </summary>
+            <param name="request">this HttpRequest</param>
+            <param name="url">string</param>
+            <returns>bool</returns>
+            <method>IsLocalUrl(this HttpRequest request, string url)</method>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Http.HttpRequestExtensions.GetUri(Microsoft.AspNetCore.Http.HttpRequest)">
+            <summary>
+            Method to return Uri of HttpRequest
+            </summary>
+            <param name="request">this HttpRequest</param>
+            <returns>bool</returns>
+            <method>GetUri(this HttpRequest request)</method>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Http.HttpRequestExtensions.GetRemoteAddress(Microsoft.AspNetCore.Http.HttpRequest)">
+            <summary>
+            Method to return IPAddress of reomote address for HttpRequest
+            </summary>
+            <param name="request">HttpRequest</param>
+            <returns>IPAddress</returns>
+            <method>GetRemoteAddress(this IPAddress ipAddress)</method>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Http.HttpRequestExtensions.IsAjaxRequest(Microsoft.AspNetCore.Http.HttpRequest)">
+            <summary>
+            Method to return if HttpRequest is an AJax request
+            </summary>
+            <param name="httpRequest">this HttpRequest</param>
+            <returns>bool</returns>
+            <method>IsAjaxRequest(this HttpRequest httpRequest)</method>
+        </member>
+        <member name="T:System.Net.IPAddressExtensions">
+            <summary>
+            Extension methods for existing IPAddress types.
+            </summary>
+            <revision>
+            __Revisions:__~~
+            | Contributor | Build | Revison Date | Description |~
+            |-------------|-------|--------------|-------------|~
+            | Christopher D. Cavell | 0.0.1 | 05/16/2020 | Initial build |~ 
+            </revision>
+        </member>
+        <member name="M:System.Net.IPAddressExtensions.GetRemoteAddress(System.Net.IPAddress,Microsoft.AspNetCore.Http.HttpRequest)">
+            <summary>
+            Method to return IPAddress of reomote address of supplied HttpRequest
+            </summary>
+            <param name="ipAddress">this IPAddress</param>
+            <param name="request">HttpRequest</param>
+            <returns>IPAddress</returns>
+            <method>GetRemoteAddress(this IPAddress ipAddress)</method>
+        </member>
+        <member name="M:System.Net.IPAddressExtensions.IsInternalAddress(System.Net.IPAddress)">
+            <summary>
+            An extension method to determine if an IP address is internal, as specified in RFC1918
+            </summary>
+            <param name="ipAddress">The IP address that will be tested</param>
+            <returns>Returns true if the IP is internal, false if it is external</returns>
+            <method>IsInternalRequest(this IPAddress ipAddress)</method>
+        </member>
+        <member name="T:HomeSite.ClassLibrary.Web.Html.StatusCodes">
+            <summary>
+            Class for returning defintion of given Html status code
+            </summary>
+            <revision>
+            __Revisions:__~~
+            | Contributor | Build | Revison Date | Description |~
+            |-------------|-------|--------------|-------------|~
+            | Christopher D. Cavell | 0.0.1 | 05/16/2020 | Initial build |~ 
+            </revision>
+        </member>
+        <member name="M:HomeSite.ClassLibrary.Web.Html.StatusCodes.GetCodeDefinition(System.Int32)">
+            <returns>
+            KeyValuePair\&lt;int, string\&gt;
+            </returns>
+            <param name="code">int</param>
+            <method>GetCodeDefinition(int code)</method>
+        </member>
+        <member name="M:HomeSite.ClassLibrary.Web.Html.StatusCodes.ToString(System.Int32)">
+            <returns>
+            string
+            </returns>
+            <param name="code">int</param>
+            <method>ToString(int code)</method>
+        </member>
+        <member name="T:HomeSite.ClassLibrary.Web.Html.Tags">
+            <summary>
+            Class to return string of Html tag.
+            </summary>
+            <revision>
+            __Revisions:__~~
+            | Contributor | Build | Revison Date | Description |~
+            |-------------|-------|--------------|-------------|~
+            | Christopher D. Cavell | 0.0.1 | 05/16/2020 | Initial build |~ 
+            </revision>
+        </member>
+        <member name="M:HomeSite.ClassLibrary.Web.Html.Tags.LineBreak">
+            <summary>
+            Method to return one new line
+            </summary>
+            <returns>
+            string
+            </returns>
+            <method>LineBreak()</method>
+        </member>
+        <member name="M:HomeSite.ClassLibrary.Web.Html.Tags.LineBreak(System.Int32)">
+            <summary>
+            Method to return multple new lines
+            </summary>
+            <returns>
+            string
+            </returns>
+            <param name="count">int</param>
+            <method>LineBreak(int count)</method>
+        </member>
+        <member name="M:HomeSite.ClassLibrary.Web.Html.Tags.Space">
+            <summary>
+            Method to return one space
+            </summary>
+            <returns>
+            string
+            </returns>
+            <method>Space()</method>
+        </member>
+        <member name="M:HomeSite.ClassLibrary.Web.Html.Tags.Space(System.Int32)">
+            <summary>
+            Method to return multipe spaces
+            </summary>
+            <returns>
+            string
+            </returns>
+            <param name="count">int</param>
+            <method>Space(int count)</method>
+        </member>
+        <member name="M:HomeSite.ClassLibrary.Web.Html.Tags.Brackets(System.String)">
+            <summary>
+            Method to wrap given string in brakets
+            </summary>
+            <returns>
+            string
+            </returns>
+            <param name="item">string</param>
+            <method>Brackets(string item)</method>
+        </member>
+        <member name="M:HomeSite.ClassLibrary.Web.Html.Tags.Bold(System.String)">
+            <summary>
+            Method to wrap given string in bold tags
+            </summary>
+            <returns>
+            string
+            </returns>
+            <param name="item">string</param>
+            <method>Bold(string item)</method>
+        </member>
+        <member name="M:HomeSite.ClassLibrary.Web.Html.Tags.Italic(System.String)">
+            <summary>
+            Method to wrap given string in italic tags
+            </summary>
+            <returns>
+            string
+            </returns>
+            <param name="item">string</param>
+            <method>Italic(string item)</method>
+        </member>
+        <member name="M:HomeSite.ClassLibrary.Web.Html.Tags.Important(System.String)">
+            <summary>
+            Method to wrap given string in strong tags
+            </summary>
+            <returns>
+            string
+            </returns>
+            <param name="item">string</param>
+            <method>Important(string item)</method>
+        </member>
+        <member name="M:HomeSite.ClassLibrary.Web.Html.Tags.Emphasized(System.String)">
+            <summary>
+            Method to wrap given string in em tags
+            </summary>
+            <returns>
+            string
+            </returns>
+            <param name="item">string</param>
+            <method>Emphasized(string item)</method>
+        </member>
+        <member name="M:HomeSite.ClassLibrary.Web.Html.Tags.Marked(System.String)">
+            <summary>
+            Method to wrap given string in mark tags
+            </summary>
+            <returns>
+            string
+            </returns>
+            <param name="item">string</param>
+            <method>Marked(string item)</method>
+        </member>
+        <member name="M:HomeSite.ClassLibrary.Web.Html.Tags.Small(System.String)">
+            <summary>
+            Method to wrap given string in small tags
+            </summary>
+            <returns>
+            string
+            </returns>
+            <param name="item">string</param>
+            <method>Small(string item)</method>
+        </member>
+        <member name="M:HomeSite.ClassLibrary.Web.Html.Tags.Deleted(System.String)">
+            <summary>
+            Method to wrap given string in del tags
+            </summary>
+            <returns>
+            string
+            </returns>
+            <param name="item">string</param>
+            <method>Deleted(string item)</method>
+        </member>
+        <member name="M:HomeSite.ClassLibrary.Web.Html.Tags.Inserted(System.String)">
+            <summary>
+            Method to wrap given string in ins tags
+            </summary>
+            <returns>
+            string
+            </returns>
+            <param name="item">string</param>
+            <method>Inserted(string item)</method>
+        </member>
+        <member name="M:HomeSite.ClassLibrary.Web.Html.Tags.Subscript(System.String)">
+            <summary>
+            Method to wrap given string in sub tags
+            </summary>
+            <returns>
+            string
+            </returns>
+            <param name="item">string</param>
+            <method>Subscript(string item)</method>
+        </member>
+        <member name="M:HomeSite.ClassLibrary.Web.Html.Tags.Superscript(System.String)">
+            <summary>
+            Method to wrap given string in sup tags
+            </summary>
+            <returns>
+            string
+            </returns>
+            <param name="item">string</param>
+            <method>Superscript(string item)</method>
+        </member>
+        <member name="M:HomeSite.ClassLibrary.Web.Html.Tags.Quote(System.String)">
+            <summary>
+            Method to wrap given string in q tags
+            </summary>
+            <returns>
+            string
+            </returns>
+            <param name="item">string</param>
+            <method>Quote(string item)</method>
+        </member>
+        <member name="M:HomeSite.ClassLibrary.Web.Html.Tags.BlockQuote(System.String,System.String)">
+            <summary>
+            Method to wrap given string in blockquote tags with given citing
+            </summary>
+            <returns>
+            string
+            </returns>
+            <param name="item">string</param>
+            <param name="cite">string</param>
+            <method>BlockQuote(string item, string cite)</method>
+        </member>
+        <member name="M:HomeSite.ClassLibrary.Web.Html.Tags.Abbreviation(System.String)">
+            <summary>
+            Method to wrap given string in abbr tags
+            </summary>
+            <returns>
+            string
+            </returns>
+            <param name="item">string</param>
+            <method>Abbreviation(string item)</method>
+        </member>
+        <member name="M:HomeSite.ClassLibrary.Web.Html.Tags.Address(System.String)">
+            <summary>
+            Method to wrap given string in address tags
+            </summary>
+            <returns>
+            string
+            </returns>
+            <param name="item">string</param>
+            <method>Address(string item)</method>
+        </member>
+        <member name="M:HomeSite.ClassLibrary.Web.Html.Tags.Cite(System.String)">
+            <summary>
+            Method to wrap given string in cite tags
+            </summary>
+            <returns>
+            string
+            </returns>
+            <param name="item">string</param>
+            <method>Cite(string item)</method>
+        </member>
+        <member name="M:HomeSite.ClassLibrary.Web.Html.Tags.BidirectionalOverride(System.String)">
+            <summary>
+            Method to wrap given string in bdo tags
+            </summary>
+            <returns>
+            string
+            </returns>
+            <param name="item">string</param>
+            <method>BidirectionalOverride(string item)</method>
+        </member>
+        <member name="M:HomeSite.ClassLibrary.Web.Html.Tags.Paragraph(System.String)">
+            <summary>
+            Method to wrap given string in p tags
+            </summary>
+            <returns>
+            string
+            </returns>
+            <param name="item">string</param>
+            <method>Paragraph(string item)</method>
+        </member>
+        <member name="T:HomeSite.ClassLibrary.Web.Http.ApplicationCookie">
+            <summary>
+            Cookie class
+            </summary>
+            <revision>
+            __Revisions:__~~
+            | Contributor | Build | Revison Date | Description |~
+            |-------------|-------|--------------|-------------|~
+            | Christopher D. Cavell | 0.0.1 | 05/16/2020 | Initial build |~ 
+            </revision>
+        </member>
+        <member name="M:HomeSite.ClassLibrary.Web.Http.ApplicationCookie.#ctor(Microsoft.AspNetCore.Http.IHttpContextAccessor)">
+            <summary>
+            Initializes a new instance reading, writing or removing cookie
+            </summary>
+            <method>ApplicationCookie(IHttpContextAccessor httpContextAccessor)</method>
+        </member>
+        <member name="M:HomeSite.ClassLibrary.Web.Http.ApplicationCookie.#ctor(Microsoft.AspNetCore.Http.IHttpContextAccessor,Microsoft.AspNetCore.Http.CookieOptions)">
+            <summary>
+            Initializes a new instance reading, writing or removing cookie
+            </summary>
+            <method>ApplicationCookie(IHttpContextAccessor httpContextAccessor, CookieOptions cookieOptions)</method>
+        </member>
+        <member name="M:HomeSite.ClassLibrary.Web.Http.ApplicationCookie.GetValue(System.String,System.String)">
+            <summary>
+            Method to return value for given key in dictonary stored in cookie
+            </summary>
+            <param name="cookieKey">string</param>
+            <param name="key">string</param>
+            <returns>string</returns>
+            <exception>Requires HttpRequest</exception>
+            <method>GetValue(string cookieKey, string key)</method>
+        </member>
+        <member name="M:HomeSite.ClassLibrary.Web.Http.ApplicationCookie.GetAllValues(System.String)">
+            <summary>
+            Method to return dictionary of values for given key stored in cookie
+            </summary>
+            <param name="cookieKey">string</param>
+            <returns>Dictionary&lt;string, string%gt;</returns>
+            <exception>Requires HttpRequest</exception>
+            <method>GetAllValues(string sessionkey)</method>
+        </member>
+        <member name="M:HomeSite.ClassLibrary.Web.Http.ApplicationCookie.SetValue(System.String,System.String,System.String)">
+            <summary>
+            Method to save a record in a dictonary of key value records in cookie
+            </summary>
+            <param name="cookieKey">string</param>
+            <param name="key">string</param>
+            <param name="value">string</param>
+            <exception>Requires HttpRequest and HttpResponse</exception>
+            <method>SetValue(string cookiekey, string key, string value)</method>
+        </member>
+        <member name="M:HomeSite.ClassLibrary.Web.Http.ApplicationCookie.SetAllValues(System.String,System.Collections.Generic.Dictionary{System.String,System.String})">
+            <summary>
+            Method to save a dictonary of key value records in cookie
+            </summary>
+            <param name="cookieKey">string</param>
+            <param name="values">Dictionary&lt;string, string&gt;</param>
+            <exception>Requires HttpRequest and HttpResponse</exception>
+            <method>SetAllValues(string cookiekey, Dictionary&lt;string, string&gt;)</method>
+        </member>
+        <member name="M:HomeSite.ClassLibrary.Web.Http.ApplicationCookie.Remove(System.String)">
+            <summary>  
+            Delete the cookie  
+            </summary>  
+            <param name="cookieKey">string</param>  
+            <exception>Requires HttpResponse</exception>
+            <method>Remove(string cookiekey)</method>
+        </member>
+        <member name="T:HomeSite.ClassLibrary.Web.Mvc.Controllers.WebBaseController`1">
+            <class>WebBaseController</class>
+            <summary>
+            Base controller class for web application
+            </summary>
+            <revision>
+            __Revisions:__~~
+            | Contributor | Build | Revison Date | Description |~
+            |-------------|-------|--------------|-------------|~
+            | Christopher D. Cavell | 0.0.1 | 05/16/2020 | Initial build |~ 
+            </revision>
+        </member>
+        <member name="F:HomeSite.ClassLibrary.Web.Mvc.Controllers.WebBaseController`1._logger">
+            <value>ILogger</value>
+        </member>
+        <member name="F:HomeSite.ClassLibrary.Web.Mvc.Controllers.WebBaseController`1._webHostEnvironment">
+            <value>IWebHostEnvironment</value>
+        </member>
+        <member name="F:HomeSite.ClassLibrary.Web.Mvc.Controllers.WebBaseController`1._httpContextAccessor">
+            <value>IWebHostEnvironment</value>
+        </member>
+        <member name="M:HomeSite.ClassLibrary.Web.Mvc.Controllers.WebBaseController`1.#ctor(Microsoft.Extensions.Logging.ILogger{`0},Microsoft.AspNetCore.Hosting.IWebHostEnvironment,Microsoft.AspNetCore.Http.IHttpContextAccessor)">
+            <summary>
+            Constructor method
+            </summary>
+            <param name="logger">ILogger</param>
+            <param name="webHostEnvironment">IWebHostEnvironment</param>
+            <param name="httpContextAccessor">IHttpContextAccessor</param>
+            <method>WebBaseController(ILogger&lt;T&gt; logger, IWebHostEnvironment webHostEnvironment, IHttpContextAccessor httpContextAccessor)</method>
+        </member>
+        <member name="M:HomeSite.ClassLibrary.Web.Mvc.Controllers.WebBaseController`1.ValidateModel``1(``0)">
+            <summary>
+            Global model validation method
+            </summary>
+            <param name="model">Model</param>
+            <returns>KeyValuePair&lt;int, string&gt;</returns>
+            <method>ValidateModel&lt;M&gt;(M model)</method>
+        </member>
+        <member name="M:HomeSite.ClassLibrary.Web.Mvc.Controllers.WebBaseController`1.Error(System.Int32)">
+            <summary>
+            Global error handling
+            </summary>
+            <param name="id">int</param>
+            <returns>IActionResult</returns>
+        </member>
+        <member name="T:HomeSite.ClassLibrary.Web.Mvc.Fillters.ControllerActionLogFilter">
+            <summary>
+            Action logging filter that runs before and after action method execution
+            </summary>
+            <revision>
+            __Revisions:__~~
+            | Contributor | Build | Revison Date | Description |~
+            |-------------|-------|--------------|-------------|~
+            | Christopher D. Cavell | 0.0.1 | 05/16/2020 | Initial build |~ 
+            </revision>
+        </member>
+        <member name="M:HomeSite.ClassLibrary.Web.Mvc.Fillters.ControllerActionLogFilter.#ctor(Microsoft.Extensions.Logging.ILogger{HomeSite.ClassLibrary.Web.Mvc.Fillters.ControllerActionLogFilter},Microsoft.AspNetCore.Http.IHttpContextAccessor)">
+            <summary>
+            Initializes a new instance
+            </summary>
+            <method>ControllerActionLogFilter(ILogger&lt;ControllerActionLogFilter&gt; logger, IHttpContextAccessor httpContextAccessor)</method>
+        </member>
+        <member name="M:HomeSite.ClassLibrary.Web.Mvc.Fillters.ControllerActionLogFilter.OnActionExecuting(Microsoft.AspNetCore.Mvc.Filters.ActionExecutingContext)">
+            <summary>
+            Executes before action method execution
+            </summary>
+            <param name="context">ActionExecutingContext</param>
+            <method>OnActionExecuting(ActionExecutingContext context)</method>
+        </member>
+        <member name="M:HomeSite.ClassLibrary.Web.Mvc.Fillters.ControllerActionLogFilter.OnActionExecuted(Microsoft.AspNetCore.Mvc.Filters.ActionExecutedContext)">
+            <summary>
+            Executes after action method execution
+            </summary>
+            <param name="context">ActionExecutedContext</param>
+            <method>OnActionExecuted(ActionExecutedContext context)</method>
+        </member>
+        <member name="T:HomeSite.ClassLibrary.Web.Mvc.Fillters.ControllerActionPageFilter">
+            <summary>
+            Action user filter that runs before and after action method execution
+            </summary>
+            <revision>
+            __Revisions:__~~
+            | Contributor | Build | Revison Date | Description |~
+            |-------------|-------|--------------|-------------|~
+            | Christopher D. Cavell | 0.0.1 | 05/16/2020 | Initial build |~ 
+            </revision>
+        </member>
+        <member name="M:HomeSite.ClassLibrary.Web.Mvc.Fillters.ControllerActionPageFilter.#ctor(Microsoft.Extensions.Logging.ILogger{HomeSite.ClassLibrary.Web.Mvc.Fillters.ControllerActionPageFilter},Microsoft.AspNetCore.Http.IHttpContextAccessor)">
+            <summary>
+            Initializes a new instance
+            </summary>
+            <method>ControllerActionPageFilter(ILogger&lt;ControllerActionPageFilter&gt; logger, IHttpContextAccessor httpContextAccessor)</method>
+        </member>
+        <member name="M:HomeSite.ClassLibrary.Web.Mvc.Fillters.ControllerActionPageFilter.OnActionExecuting(Microsoft.AspNetCore.Mvc.Filters.ActionExecutingContext)">
+            <summary>
+            Executes before action method execution
+            </summary>
+            <param name="context">ActionExecutingContext</param>
+            <method>OnActionExecuting(ActionExecutingContext context)</method>
+        </member>
+        <member name="M:HomeSite.ClassLibrary.Web.Mvc.Fillters.ControllerActionPageFilter.OnActionExecuted(Microsoft.AspNetCore.Mvc.Filters.ActionExecutedContext)">
+            <summary>
+            Executes after action method execution
+            </summary>
+            <param name="context">ActionExecutedContext</param>
+            <method>OnActionExecuted(ActionExecutedContext context)</method>
+        </member>
+        <member name="T:HomeSite.ClassLibrary.Web.Mvc.Models.PageViewModel">
+            <summary>
+            Page view model
+            </summary>
+            <revision>
+            __Revisions:__~~
+            | Contributor | Build | Revison Date | Description |~
+            |-------------|-------|--------------|-------------|~
+            | Christopher D. Cavell | 0.0.1 | 05/16/2020 | Initial build |~ 
+            </revision>
+        </member>
+        <member name="P:HomeSite.ClassLibrary.Web.Mvc.Models.PageViewModel.ReturnURL">
+            <value>string</value>
+        </member>
+        <member name="P:HomeSite.ClassLibrary.Web.Mvc.Models.PageViewModel.RequestId">
+            <value>string</value>
+        </member>
+        <member name="P:HomeSite.ClassLibrary.Web.Mvc.Models.PageViewModel.ErrorMessage">
+            <value>string</value>
+        </member>
+        <member name="P:HomeSite.ClassLibrary.Web.Mvc.Models.PageViewModel.ShowRequestId">
+            <value>bool</value>
+        </member>
+        <member name="P:HomeSite.ClassLibrary.Web.Mvc.Models.PageViewModel.IsError">
+            <value>bool</value>
+        </member>
+        <member name="P:HomeSite.ClassLibrary.Web.Mvc.Models.PageViewModel.Controller">
+            <value>string</value>
+        </member>
+        <member name="P:HomeSite.ClassLibrary.Web.Mvc.Models.PageViewModel.Action">
+            <value>string</value>
+        </member>
+        <member name="T:HomeSite.ClassLibrary.Web.Mvc.Models.UserViewModel">
+            <summary>
+            User view model
+            </summary>
+            <revision>
+            __Revisions:__~~
+            | Contributor | Build | Revison Date | Description |~
+            |-------------|-------|--------------|-------------|~
+            | Christopher D. Cavell | 0.0.1 | 05/16/2020 | Initial build |~ 
+            </revision>
+        </member>
+        <member name="P:HomeSite.ClassLibrary.Web.Mvc.Models.UserViewModel.IsAuthenticated">
+            <value>string</value>
+        </member>
+        <member name="P:HomeSite.ClassLibrary.Web.Mvc.Models.UserViewModel.Id">
+            <value>string</value>
+        </member>
+        <member name="P:HomeSite.ClassLibrary.Web.Mvc.Models.UserViewModel.Name">
+            <value>string</value>
+        </member>
+        <member name="P:HomeSite.ClassLibrary.Web.Mvc.Models.UserViewModel.Email">
+            <value>string</value>
+        </member>
+        <member name="P:HomeSite.ClassLibrary.Web.Mvc.Models.UserViewModel.Roles">
+            <value>List&lt;string&gt;</value>
+        </member>
+        <member name="P:HomeSite.ClassLibrary.Web.Mvc.Models.UserViewModel.IPAddress">
+            <value>IPAddress</value>
+        </member>
+        <member name="T:HomeSite.ClassLibrary.Web.Security.AESGCM">
+            <summary>
+            This work (Modern Encryption of a String C#, by James Tuley), 
+            identified by James Tuley, is free of known copyright restrictions.
+            &lt;br /&gt;https://gist.github.com/4336842
+            &lt;br /&gt;http://creativecommons.org/publicdomain/mark/1.0/
+            </summary>
+            <revision>
+            __Revisions:__~~
+            | Contributor | Build | Revison Date | Description |~
+            |-------------|-------|--------------|-------------|~
+            | Christopher D. Cavell | 0.0.1 | 05/16/2020 | Initial build |~ 
+            </revision>
+        </member>
+        <member name="F:HomeSite.ClassLibrary.Web.Security.AESGCM.NonceBitSize">
+            <value>int</value>
+        </member>
+        <member name="F:HomeSite.ClassLibrary.Web.Security.AESGCM.MacBitSize">
+            <value>int</value>
+        </member>
+        <member name="F:HomeSite.ClassLibrary.Web.Security.AESGCM.KeyBitSize">
+            <value>int</value>
+        </member>
+        <member name="F:HomeSite.ClassLibrary.Web.Security.AESGCM.SaltBitSize">
+            <value>int</value>
+        </member>
+        <member name="F:HomeSite.ClassLibrary.Web.Security.AESGCM.Iterations">
+            <value>int</value>
+        </member>
+        <member name="F:HomeSite.ClassLibrary.Web.Security.AESGCM.MinPasswordLength">
+            <value>int</value>
+        </member>
+        <member name="M:HomeSite.ClassLibrary.Web.Security.AESGCM.NewKey">
+            <summary>
+            Helper that generates a random new key on each call.
+            </summary>
+            <returns>byte[]</returns>
+        </member>
+        <member name="M:HomeSite.ClassLibrary.Web.Security.AESGCM.SimpleEncrypt(System.String,System.Byte[],System.Byte[])">
+            <summary>
+            Simple Encryption And Authentication (AES-GCM) of a UTF8 string.
+            </summary>
+            <param name="secretMessage">The secret message.</param>
+            <param name="key">The key.</param>
+            <param name="nonSecretPayload">Optional non-secret payload.</param>
+            <returns>
+            Encrypted Message
+            </returns>
+            <exception cref="T:System.ArgumentException">Secret Message Required!;secretMessage</exception>
+            <remarks>
+            Adds overhead of (Optional-Payload + BlockSize(16) + Message +  HMac-Tag(16)) * 1.33 Base64
+            </remarks>
+        </member>
+        <member name="M:HomeSite.ClassLibrary.Web.Security.AESGCM.SimpleDecrypt(System.String,System.Byte[],System.Int32)">
+            <summary>
+            Simple Decryption and Authentication (AES-GCM) of a UTF8 Message
+            </summary>
+            <param name="encryptedMessage">The encrypted message.</param>
+            <param name="key">The key.</param>
+            <param name="nonSecretPayloadLength">Length of the optional non-secret payload.</param>
+            <returns>Decrypted Message</returns>
+        </member>
+        <member name="M:HomeSite.ClassLibrary.Web.Security.AESGCM.SimpleEncryptWithPassword(System.String,System.String,System.Byte[])">
+            <summary>
+            Simple Encryption And Authentication (AES-GCM) of a UTF8 String
+            using key derived from a supplied password (PBKDF2).
+            </summary>
+            <param name="secretMessage">The secret message.</param>
+            <param name="password">The password.</param>
+            <param name="nonSecretPayload">The non secret payload.</param>
+            <returns>
+            Encrypted Message
+            </returns>
+            <remarks>
+            Significantly less secure than using random binary keys.
+            Adds additional non secret payload for key generation parameters.
+            </remarks>
+        </member>
+        <member name="M:HomeSite.ClassLibrary.Web.Security.AESGCM.SimpleDecryptWithPassword(System.String,System.String,System.Int32)">
+            <summary>
+            Simple Decryption and Authentication (AES-GCM) of a UTF8 message
+            using a key derived from a supplied password (PBKDF2)
+            </summary>
+            <param name="encryptedMessage">The encrypted message.</param>
+            <param name="password">The password.</param>
+            <param name="nonSecretPayloadLength">Length of the non secret payload.</param>
+            <returns>
+            Decrypted Message
+            </returns>
+            <exception cref="T:System.ArgumentException">Encrypted Message Required!;encryptedMessage</exception>
+            <remarks>
+            Significantly less secure than using random binary keys.
+            </remarks>
+        </member>
+        <member name="M:HomeSite.ClassLibrary.Web.Security.AESGCM.SimpleEncrypt(System.Byte[],System.Byte[],System.Byte[])">
+            <summary>
+            Simple Encryption And Authentication (AES-GCM) of a UTF8 String
+            using key derived from a default internal password (PBKDF2).
+            </summary>
+            <param name="secretMessage">byte[]</param>
+            <param name="key">byte[]</param>
+            <param name="nonSecretPayload">byte[]</param>
+            <returns>
+            Encrypted Message
+            </returns>
+            <remarks>
+            Significantly less secure than using random binary keys.
+            Adds additional non secret payload for key generation parameters.
+            </remarks>
+        </member>
+        <member name="M:HomeSite.ClassLibrary.Web.Security.AESGCM.SimpleDecrypt(System.Byte[],System.Byte[],System.Int32)">
+            <summary>
+            Simple Decryption and Authentication (AES-GCM) of a UTF8 message
+            using a key derived from a default internal password (PBKDF2)
+            </summary>
+            <param name="encryptedMessage">byte[]</param>
+            <param name="key">byte[]</param>
+            <param name="nonSecretPayloadLength">int</param>
+            <returns>
+            Decrypted Message
+            </returns>
+            <exception cref="T:System.ArgumentException">Encrypted Message Required!;encryptedMessage</exception>
+            <remarks>
+            Significantly less secure than using random binary keys.
+            </remarks>
+        </member>
+        <member name="M:HomeSite.ClassLibrary.Web.Security.AESGCM.SimpleEncryptWithPassword(System.Byte[],System.String,System.Byte[])">
+            <summary>
+            Simple Encryption With Password
+            </summary>
+            <param name="secretMessage">byte[]</param>
+            <param name="password">string</param>
+            <param name="nonSecretPayload">byte[]</param>
+            <returns>byte[]</returns>
+        </member>
+        <member name="M:HomeSite.ClassLibrary.Web.Security.AESGCM.SimpleDecryptWithPassword(System.Byte[],System.String,System.Int32)">
+            <summary>
+            Simple Decryption With Password
+            </summary>
+            <param name="encryptedMessage">byte[]</param>
+            <param name="password">string</param>
+            <param name="nonSecretPayloadLength">int</param>
+            <returns></returns>
+        </member>
+        <member name="M:HomeSite.ClassLibrary.Web.Security.AESGCM.Encrypt(System.String)">
+            <summary>
+            Method to encrypt plain text string
+            </summary>
+            <param name="plainText">string</param>
+            <returns>string</returns>
+            <method>Encrypt(string plainText)</method>
+        </member>
+        <member name="M:HomeSite.ClassLibrary.Web.Security.AESGCM.Decrypt(System.String)">
+            <summary>
+            Method to decrypt encrypted string to plain text
+            </summary>
+            <param name="encryptedText">string</param>
+            <returns>string</returns>
+            <method>Decrypt(string encryptedText)</method>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:HomeSite.ClassLibrary.Web.Security.AESGCM.Seed(Microsoft.Extensions.Configuration.IConfiguration)" -->
+        <member name="T:EdLink.NetCore.ClassLibrary.Mvc.Fillters.ControllerActionUserFilter">
+            <summary>
+            Action user filter that runs before and after action method execution
+            </summary>
+            <revision>
+            __Revisions:__~~
+            | Contributor | Build | Revison Date | Description |~
+            |-------------|-------|--------------|-------------|~
+            | Christopher D. Cavell | LDOESVC-261 | 02/21/2020 | Initial build |~ 
+            </revision>
+        </member>
+        <member name="M:EdLink.NetCore.ClassLibrary.Mvc.Fillters.ControllerActionUserFilter.#ctor(Microsoft.Extensions.Logging.ILogger{EdLink.NetCore.ClassLibrary.Mvc.Fillters.ControllerActionUserFilter})">
+            <summary>
+            Initializes a new instance
+            </summary>
+            <method>ControllerActionUserFilter()</method>
+        </member>
+        <member name="M:EdLink.NetCore.ClassLibrary.Mvc.Fillters.ControllerActionUserFilter.OnActionExecuting(Microsoft.AspNetCore.Mvc.Filters.ActionExecutingContext)">
+            <summary>
+            Executes before action method execution
+            </summary>
+            <param name="context">ActionExecutingContext</param>
+            <method>OnActionExecuting(ActionExecutingContext context)</method>
+        </member>
+        <member name="M:EdLink.NetCore.ClassLibrary.Mvc.Fillters.ControllerActionUserFilter.OnActionExecuted(Microsoft.AspNetCore.Mvc.Filters.ActionExecutedContext)">
+            <summary>
+            Executes after action method execution
+            </summary>
+            <param name="context">ActionExecutedContext</param>
+            <method>OnActionExecuted(ActionExecutedContext context)</method>
+        </member>
+    </members>
+</doc>

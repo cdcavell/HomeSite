@@ -4,6 +4,17 @@
         <name>HomeSite.IdentiyServer4</name>
     </assembly>
     <members>
+        <member name="T:WebApplication1.Controllers.HomeController">
+            <summary>
+            Home controller class
+            </summary>
+            <revision>
+            __Revisions:__~~
+            | Contributor | Build | Revison Date | Description |~
+            |-------------|-------|--------------|-------------|~
+            | Christopher D. Cavell | 0.0.1 | 05/16/2020 | Initial build |~ 
+            </revision>
+        </member>
         <member name="T:HomeSite.IdentiyServer4.Program">
             <summary>
             Entry point class
@@ -12,7 +23,7 @@
             __Revisions:__~~
             | Contributor | Build | Revison Date | Description |~
             |-------------|-------|--------------|-------------|~
-            | Christopher D. Cavell | 0.0.1 | 05/15/2020 | Initial build |~ 
+            | Christopher D. Cavell | 0.0.1 | 05/16/2020 | Initial build |~ 
             </revision>
         </member>
         <member name="M:HomeSite.IdentiyServer4.Program.Main(System.String[])">
@@ -29,6 +40,61 @@
             <param name="args">string[]</param>
             <returns>IHostBuilder</returns>
             <method>CreateHostBuilder(string[] args)</method>
+        </member>
+        <member name="T:HomeSite.IdentiyServer4.Startup">
+            <summary>
+            The Startup class configures services and the application's request pipeline&lt;br /&gt;&lt;br /&gt;
+            _Services_ are components that are used by the app. For example, a logging component is a service. Code to configure (_or register_) services is added to the ```Startup.ConfigureServices``` method.&lt;br /&gt;&lt;br /&gt;
+            The request handling pipeline is composed as a series of _middleware_ components. For example, a middleware might handle requests for static files or redirect HTTP requests to HTTPS. Each middleware performs asynchronous operations on an ```HttpContext``` and then either invokes the next middleware in the pipeline or terminates the request. Code to configure the request handling pipeline is added to the ```Startup.Configure``` method.
+            </summary>
+            <revision>
+            __Revisions:__~~
+            | Contributor | Build | Revison Date | Description |~
+            |-------------|-------|--------------|-------------|~
+            | Christopher D. Cavell | 0.0.1 | 05/16/2020 | Initial commit |~ 
+            </revision>
+        </member>
+        <member name="M:HomeSite.IdentiyServer4.Startup.#ctor(Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            Class Constructor
+            </summary>
+            <param name="configuration">IConfiguration</param>
+            <method>Startup(IConfiguration configuration)</method>
+        </member>
+        <member name="M:HomeSite.IdentiyServer4.Startup.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            This optional method gets called by the runtime. Use this method to add services to the container.
+            </summary>
+            <param name="services">IServiceCollection</param>
+            <method>ConfigureServices(IServiceCollection services)</method>
+        </member>
+        <member name="M:HomeSite.IdentiyServer4.Startup.Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Hosting.IWebHostEnvironment,Microsoft.Extensions.Logging.ILogger{HomeSite.IdentiyServer4.Startup},Microsoft.Extensions.Hosting.IHostApplicationLifetime)">
+            <summary>
+            This required method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+            </summary>
+            <param name="app">IApplicationBuilder</param>
+            <param name="env">IWebHostEnvironment</param>
+            <param name="logger">ILogger&lt;Startup&gt;</param>
+            <param name="lifetime">IHostApplicationLifetime</param>
+            <method>Configure(IApplicationBuilder app, IWebHostEnvironment env, ILogger&lt;Startup&gt; logger, IHostApplicationLifetime lifetime)</method>
+        </member>
+        <member name="M:HomeSite.IdentiyServer4.Startup.OnAppStarted">
+            <summary>
+            Exposed IApplicationLifetime interface method.
+            </summary>
+            <method>OnAppStarted()</method>
+        </member>
+        <member name="M:HomeSite.IdentiyServer4.Startup.OnAppStopping">
+            <summary>
+            Exposed IApplicationLifetime interface method.
+            </summary>
+            <method>OnAppStopping()</method>
+        </member>
+        <member name="M:HomeSite.IdentiyServer4.Startup.OnAppStopped">
+            <summary>
+            Exposed IApplicationLifetime interface method.
+            </summary>
+            <method>OnAppStopped()</method>
         </member>
     </members>
 </doc>

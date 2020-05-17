@@ -122,23 +122,94 @@
             <returns>string</returns>
             <method>ToString(int dec)</method>
         </member>
-        <member name="T:HomeSite.ClassLibrary.Commons.Logging.ConsoleLog">
+        <member name="T:HomeSite.ClassLibrary.Commons.Logging.Logger">
             <summary>
-            Static console logging class.
+            Global application logger
             </summary>
             <revision>
             __Revisions:__~~
             | Contributor | Build | Revison Date | Description |~
             |-------------|-------|--------------|-------------|~
-            | Christopher D. Cavell | 0.0.1 | 05/15/2020 | Initial build |~ 
+            | Christopher D. Cavell | 0.0.1 | 05/16/2020 | Initial build |~ 
             </revision>
         </member>
-        <member name="M:HomeSite.ClassLibrary.Commons.Logging.ConsoleLog.Exception(System.Exception)">
+        <member name="M:HomeSite.ClassLibrary.Commons.Logging.Logger.#ctor(Microsoft.Extensions.Logging.ILogger)">
             <summary>
-            Method to write formated exception information to console
+            Initialize logger class
+            </summary>
+            <param name="logger">ILogger</param>
+            <method>Logger(ILogger logger)</method>
+        </member>
+        <member name="M:HomeSite.ClassLibrary.Commons.Logging.Logger.Information(System.String)">
+            <summary>
+            Information logging
+            </summary>
+            <param name="message">string</param>
+            <method>Information(string message)</method>
+        </member>
+        <member name="M:HomeSite.ClassLibrary.Commons.Logging.Logger.Trace(System.String)">
+            <summary>
+            Debug logging
+            </summary>
+            <param name="message">string</param>
+            <method>Debug(string message)</method>
+        </member>
+        <member name="M:HomeSite.ClassLibrary.Commons.Logging.Logger.Debug(System.String)">
+            <summary>
+            Debug logging
+            </summary>
+            <param name="message">string</param>
+            <method>Debug(string message)</method>
+        </member>
+        <member name="M:HomeSite.ClassLibrary.Commons.Logging.Logger.Warning(System.String)">
+            <summary>
+            Warning logging
+            </summary>
+            <param name="message">string</param>
+            <method>Warning(string message)</method>
+        </member>
+        <member name="M:HomeSite.ClassLibrary.Commons.Logging.Logger.Critical(System.Exception,System.String)">
+            <summary>
+            Warning logging
             </summary>
             <param name="exception">Exception</param>
-            <method>Exception(Exception exception)</method>
+            <param name="message">string</param>
+            <method>Critical(Exception exception, string message)</method>
+        </member>
+        <member name="M:HomeSite.ClassLibrary.Commons.Logging.Logger.Exception(System.Exception,System.String)">
+            <summary>
+            Exception logging
+            </summary>
+            <param name="exception">Exception</param>
+            <param name="message">string</param>
+            <method>Exception(Exception exception, string message = null)</method>
+        </member>
+        <member name="M:HomeSite.ClassLibrary.Commons.Logging.Logger.Log``1(Microsoft.Extensions.Logging.LogLevel,Microsoft.Extensions.Logging.EventId,``0,System.Exception,System.Func{``0,System.Exception,System.String})">
+            <summary>
+            Implementation of ILogger method
+            </summary>
+            <param name="logLevel">LogLevel</param>
+            <param name="eventId">EventId</param>
+            <param name="state">TState</param>
+            <param name="exception">Exception</param>
+            <param name="formatter">Func&lt;TState, Exception, string&gt;</param>
+            <method>Log&lt;TState&gt;(LogLevel logLevel, EventId eventId, TState state, Exception exception, Func&lt;TState, Exception, string&gt; formatter)</method>
+        </member>
+        <member name="M:HomeSite.ClassLibrary.Commons.Logging.Logger.IsEnabled(Microsoft.Extensions.Logging.LogLevel)">
+            <summary>
+            Implementation of ILogger method
+            </summary>
+            <param name="logLevel">LogLevel</param>
+            <method>IsEnabled(LogLevel logLevel)</method>
+            <returns>bool</returns>
+        </member>
+        <member name="M:HomeSite.ClassLibrary.Commons.Logging.Logger.BeginScope``1(``0)">
+            <summary>
+            Implementation of ILogger method
+            </summary>
+            <param name="state">TState</param>
+            <method>BeginScope&lt;TState&gt;(TState state)</method>
+            <returns>IDisposable</returns>
         </member>
         <member name="T:HomeSite.ClassLibrary.Commons.Xml.Transform">
             <summary>
@@ -159,6 +230,26 @@
             <param name="inputXml">string</param>
             <param name="outputFile">string</param>
             <method>Write(string inputXslt, string inputXml, string outputFile)</method>
+        </member>
+        <member name="T:System.Linq.EnumerableExtentions">
+            <summary>
+            Extension methods for existing Enumerable types.
+            </summary>
+            <revision>
+            __Revisions:__~~
+            | Contributor | Build | Revison Date | Description |~
+            |-------------|-------|--------------|-------------|~
+            | Christopher D. Cavell | 0.0.1 | 05/16/2020 | Initial build |~ 
+            </revision>
+        </member>
+        <member name="M:System.Linq.EnumerableExtentions.DistinctBy``2(System.Collections.Generic.IEnumerable{``0},System.Func{``0,``1})">
+            <summary>
+            Method to determine if string is a valid email address
+            </summary>
+            <param name="source">this IEnumerable&lt;TSource&gt;</param>
+            <param name="keySelector">Func&lt;TSource, TKey&gt;</param>
+            <returns>IEnumerable&lt;TSource&gt;</returns>
+            <method>DistinctBy&lt;TSource, TKey&gt;(this IEnumerable&lt;TSource&gt; source, Func&lt;TSource, TKey&gt; keySelector)</method>
         </member>
         <member name="T:System.StringExtensions">
             <summary>
