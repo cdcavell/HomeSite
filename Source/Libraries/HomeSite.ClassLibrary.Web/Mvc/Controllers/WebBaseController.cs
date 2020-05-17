@@ -1,13 +1,15 @@
 ﻿using HomeSite.ClassLibrary.Commons.Logging;
 using HomeSite.ClassLibrary.Web.Html;
+using HomeSite.ClassLibrary.Web.Mvc.Fillters;
+using HomeSite.ClassLibrary.Web.Mvc.Models;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Razor.TagHelpers;
 using Microsoft.Extensions.Logging;
 using System.Collections.Generic;
-using System.Net;
+using System.Diagnostics;
 
 namespace HomeSite.ClassLibrary.Web.Mvc.Controllers
 {
@@ -19,11 +21,14 @@ namespace HomeSite.ClassLibrary.Web.Mvc.Controllers
     /// __Revisions:__~~
     /// | Contributor | Build | Revison Date | Description |~
     /// |-------------|-------|--------------|-------------|~
-    /// | Christopher D. Cavell | 0.0.1 | 05/16/2020 | Initial build |~ 
+    /// | Christopher D. Cavell | 0.0.1 | 05/17/2020 | Initial build |~ 
     /// </revision>
     [Controller]
-    [Authorize]
-    public abstract class WebBaseController<T> : Controller where T : WebBaseController<T>
+    //[Authorize]
+    [ServiceFilter(typeof(ControllerActionLogFilter))]
+    [ServiceFilter(typeof(ControllerActionUserFilter))]
+    [ServiceFilter(typeof(ControllerActionPageFilter))]
+    public abstract partial class WebBaseController<T> : Controller where T : WebBaseController<T>
     {
         /// <value>ILogger</value>
         protected readonly Logger _logger;
@@ -47,7 +52,7 @@ namespace HomeSite.ClassLibrary.Web.Mvc.Controllers
         }
 
         /// <summary>
-        /// Global model validation method
+        /// Global model validation method (View found in HomeSite.ClassLibrary.Razor)
         /// </summary>
         /// <param name="model">Model</param>
         /// <returns>KeyValuePair&lt;int, string&gt;</returns>
@@ -87,7 +92,19 @@ namespace HomeSite.ClassLibrary.Web.Mvc.Controllers
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error(int id)
         {
-            return BadRequest();
+            var vm = new ErrorViewModel(id);
+
+            string requestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier;
+            vm.RequestId = requestId;
+
+            var exceptionFeature = HttpContext.Features.Get<IExceptionHandlerPathFeature>();
+            if (exceptionFeature != null)
+            {
+                vm.Exception = exceptionFeature.Error;
+                _logger.Exception(exceptionFeature.Error, "Exception RequestId = " + requestId);
+            }
+
+            return View("Error", vm);
         }
     }
 }

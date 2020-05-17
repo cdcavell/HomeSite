@@ -1,4 +1,5 @@
 using HomeSite.ClassLibrary.Commons.Logging;
+using HomeSite.ClassLibrary.Web.Mvc.Fillters;
 using HomeSite.ClassLibrary.Web.Security;
 using HomeSite.IdentiyServer4.Models.AppSettings;
 using IdentityModel;
@@ -6,14 +7,13 @@ using IdentityServer4.Models;
 using IdentityServer4.Test;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.HttpOverrides;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.IdentityModel.Logging;
-using System;
 using System.Collections.Generic;
-using System.Configuration;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 
@@ -28,21 +28,24 @@ namespace HomeSite.IdentiyServer4
     /// __Revisions:__~~
     /// | Contributor | Build | Revison Date | Description |~
     /// |-------------|-------|--------------|-------------|~
-    /// | Christopher D. Cavell | 0.0.1 | 05/16/2020 | Initial commit |~ 
+    /// | Christopher D. Cavell | 0.0.1 | 05/17/2020 | Initial commit |~ 
     /// </revision>
     public class Startup
     {
         private IConfiguration _configuration;
+        private IWebHostEnvironment _webHostEnvironment;
         private Logger _logger;
 
         /// <summary>
         /// Class Constructor
         /// </summary>
         /// <param name="configuration">IConfiguration</param>
-        /// <method>Startup(IConfiguration configuration)</method>
-        public Startup(IConfiguration configuration)
+        /// <param name="webHostEnvironment">IWebHostEnvironment</param>
+        /// <method>Startup(IConfiguration configuration, IWebHostEnvironment webHostEnvironment)</method>
+        public Startup(IConfiguration configuration, IWebHostEnvironment webHostEnvironment)
         {
             _configuration = configuration;
+            _webHostEnvironment = webHostEnvironment;
         }
 
         /// <summary>
@@ -52,18 +55,25 @@ namespace HomeSite.IdentiyServer4
         /// <method>ConfigureServices(IServiceCollection services)</method>
         public void ConfigureServices(IServiceCollection services)
         {
+            // Register appsettings.json
             AppSettings appSettings = new AppSettings();
             _configuration.Bind("AppSettings", appSettings);    
             services.AddSingleton(appSettings);
 
-            IdentityModelEventSource.ShowPII = true;
-            JwtSecurityTokenHandler.DefaultInboundClaimTypeMap.Clear();
+            // Registered controller fillters
+            services.AddScoped<ControllerActionLogFilter>();
+            services.AddScoped<ControllerActionUserFilter>();
+            services.AddScoped<ControllerActionPageFilter>();
 
             services.AddMvc();
             services.AddControllersWithViews();
+            //services.AddRazorPages();
 
             services.AddAuthentication("cookie")
                 .AddCookie("cookie");
+
+            IdentityModelEventSource.ShowPII = true;
+            JwtSecurityTokenHandler.DefaultInboundClaimTypeMap.Clear();
 
             services.AddIdentityServer()
                 .AddInMemoryClients(Clients.Get())
@@ -90,20 +100,29 @@ namespace HomeSite.IdentiyServer4
             lifetime.ApplicationStopping.Register(OnAppStopping);
             lifetime.ApplicationStopped.Register(OnAppStopped);
 
-            if (env.IsDevelopment())
+            app.UseForwardedHeaders(new ForwardedHeadersOptions
             {
-                app.UseDeveloperExceptionPage();
-            }
+                ForwardedHeaders = ForwardedHeaders.XForwardedFor | ForwardedHeaders.XForwardedProto
+            });
 
+            app.UseExceptionHandler("/Home/Error/500");
+            app.UseStatusCodePagesWithRedirects("~/Home/Error/{0}");
+
+            app.UseHttpsRedirection();
             app.UseIdentityServer();
 
             app.UseStaticFiles();
+
             app.UseRouting();
+            app.UseCors();
 
             //app.UseAuthentication();
             //app.UseAuthorization();
 
-            app.UseEndpoints(endpoints => endpoints.MapDefaultControllerRoute());
+            app.UseEndpoints(endpoints => {
+                endpoints.MapDefaultControllerRoute();
+                //endpoints.MapControllerRoute("default", "{controller=Home}/{action=Index}/{id?}");
+            });
         }
 
         /// <summary>
@@ -113,7 +132,8 @@ namespace HomeSite.IdentiyServer4
         public void OnAppStarted()
         {
             AESGCM.Seed(_configuration);
-            _logger.Information($"Application Started {DateTime.Now.ToUniversalTime()}");
+            _logger.Information($"Application Started");
+            _logger.Information($"Hosting Environment: {_webHostEnvironment.EnvironmentName}");
         }
 
         /// <summary>
@@ -122,7 +142,7 @@ namespace HomeSite.IdentiyServer4
         /// <method>OnAppStopping()</method>
         public void OnAppStopping()
         {
-            _logger.Information($"Application Shutdown {DateTime.Now.ToUniversalTime()}");
+            _logger.Information($"Application Shutdown");
         }
 
         /// <summary>
@@ -131,7 +151,7 @@ namespace HomeSite.IdentiyServer4
         /// <method>OnAppStopped()</method>
         public void OnAppStopped()
         {
-            _logger.Information($"Application Ended {DateTime.Now.ToUniversalTime()}");
+            _logger.Information($"Application Ended");
         }
 
         internal class Clients

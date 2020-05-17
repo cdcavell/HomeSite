@@ -1,16 +1,41 @@
 ﻿
-<a name='WebApplication1.Controllers.HomeController'></a>
+<a name='HomeSite.IdentiyServer4.Controllers.HomeController'></a>
 
-## WebApplication1.Controllers.HomeController
+## HomeSite.IdentiyServer4.Controllers.HomeController
 Home controller class
 
 __Revisions:__
 
 | Contributor | Build | Revison Date | Description |
 |-------------|-------|--------------|-------------|
-| Christopher D. Cavell | 0.0.1 | 05/16/2020 | Initial build |
+| Christopher D. Cavell | 0.0.1 | 05/17/2020 | Initial build |
 
 
+### Methods:
+#### HomeController(ILogger<HomeController> logger, IWebHostEnvironment webHostEnvironment, IHttpContextAccessor httpContextAccessor)
+
+Constructor method
+
+|Parameters| |
+| - | - |
+|logger|ILogger|
+|webHostEnvironment|IWebHostEnvironment|
+|httpContextAccessor|IHttpContextAccessor|
+## 
+#### Index()
+
+Index method
+
+#### Returns:
+IActionResult 
+## 
+#### Privacy()
+
+Privacy method
+
+#### Returns:
+IActionResult 
+## 
 
 ( [Home](Home) )
 
@@ -60,17 +85,18 @@ __Revisions:__
 
 | Contributor | Build | Revison Date | Description |
 |-------------|-------|--------------|-------------|
-| Christopher D. Cavell | 0.0.1 | 05/16/2020 | Initial commit |
+| Christopher D. Cavell | 0.0.1 | 05/17/2020 | Initial commit |
 
 
 ### Methods:
-#### Startup(IConfiguration configuration)
+#### Startup(IConfiguration configuration, IWebHostEnvironment webHostEnvironment)
 
 Class Constructor
 
 |Parameters| |
 | - | - |
 |configuration|IConfiguration|
+|webHostEnvironment|IWebHostEnvironment|
 ## 
 #### ConfigureServices(IServiceCollection services)
 

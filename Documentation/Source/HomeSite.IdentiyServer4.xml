@@ -4,7 +4,7 @@
         <name>HomeSite.IdentiyServer4</name>
     </assembly>
     <members>
-        <member name="T:WebApplication1.Controllers.HomeController">
+        <member name="T:HomeSite.IdentiyServer4.Controllers.HomeController">
             <summary>
             Home controller class
             </summary>
@@ -12,8 +12,31 @@
             __Revisions:__~~
             | Contributor | Build | Revison Date | Description |~
             |-------------|-------|--------------|-------------|~
-            | Christopher D. Cavell | 0.0.1 | 05/16/2020 | Initial build |~ 
+            | Christopher D. Cavell | 0.0.1 | 05/17/2020 | Initial build |~ 
             </revision>
+        </member>
+        <member name="M:HomeSite.IdentiyServer4.Controllers.HomeController.#ctor(Microsoft.Extensions.Logging.ILogger{HomeSite.IdentiyServer4.Controllers.HomeController},Microsoft.AspNetCore.Hosting.IWebHostEnvironment,Microsoft.AspNetCore.Http.IHttpContextAccessor)">
+            <summary>
+            Constructor method
+            </summary>
+            <param name="logger">ILogger</param>
+            <param name="webHostEnvironment">IWebHostEnvironment</param>
+            <param name="httpContextAccessor">IHttpContextAccessor</param>
+            <method>HomeController(ILogger&lt;HomeController&gt; logger, IWebHostEnvironment webHostEnvironment, IHttpContextAccessor httpContextAccessor)</method>
+        </member>
+        <member name="M:HomeSite.IdentiyServer4.Controllers.HomeController.Index">
+            <summary>
+            Index method
+            </summary>
+            <returns>IActionResult</returns>
+            <method>Index()</method>
+        </member>
+        <member name="M:HomeSite.IdentiyServer4.Controllers.HomeController.Privacy">
+            <summary>
+            Privacy method
+            </summary>
+            <returns>IActionResult</returns>
+            <method>Privacy()</method>
         </member>
         <member name="T:HomeSite.IdentiyServer4.Program">
             <summary>
@@ -51,15 +74,16 @@
             __Revisions:__~~
             | Contributor | Build | Revison Date | Description |~
             |-------------|-------|--------------|-------------|~
-            | Christopher D. Cavell | 0.0.1 | 05/16/2020 | Initial commit |~ 
+            | Christopher D. Cavell | 0.0.1 | 05/17/2020 | Initial commit |~ 
             </revision>
         </member>
-        <member name="M:HomeSite.IdentiyServer4.Startup.#ctor(Microsoft.Extensions.Configuration.IConfiguration)">
+        <member name="M:HomeSite.IdentiyServer4.Startup.#ctor(Microsoft.Extensions.Configuration.IConfiguration,Microsoft.AspNetCore.Hosting.IWebHostEnvironment)">
             <summary>
             Class Constructor
             </summary>
             <param name="configuration">IConfiguration</param>
-            <method>Startup(IConfiguration configuration)</method>
+            <param name="webHostEnvironment">IWebHostEnvironment</param>
+            <method>Startup(IConfiguration configuration, IWebHostEnvironment webHostEnvironment)</method>
         </member>
         <member name="M:HomeSite.IdentiyServer4.Startup.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
             <summary>

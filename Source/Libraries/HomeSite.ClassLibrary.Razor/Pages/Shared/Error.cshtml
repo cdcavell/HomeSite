@@ -1,0 +1,69 @@
+﻿@using HomeSite.ClassLibrary.Web.Mvc.Models
+@using Microsoft.AspNetCore.Hosting
+@inject IWebHostEnvironment host
+
+@model ErrorViewModel
+@{
+    PageViewModel pageModel = (PageViewModel)ViewData["PageViewModel"];
+
+    var StatusCode = Model?.StatusCode;
+    var status = Model?.StatusMessage;
+    var requestId = Model?.RequestId;
+    var exception = (host.EnvironmentName.Equals("Development") || host.EnvironmentName.Equals("Local")) ? Model?.Exception : null;
+}
+
+@{
+    if (exception != null)
+    {
+        ViewData["Title"] = "Exception Error";
+    }
+    else
+    {
+        ViewData["Title"] = "Resource Error";
+    }
+}
+
+<h6 class="mb-3">
+    @ViewData["Title"]
+    @if (requestId != null)
+    {
+        <span> - Request Id: <code>@requestId</code></span>
+    }
+</h6>
+
+<br />
+<br />
+<div class="container message@((StatusCode == 500) ? " message-error" : "  message-warning")" role="alert">
+    <table>
+        <tr><td><h6 class="text-base">Status Code: @StatusCode.ToString()</h6></td></tr>
+        @if (status != null)
+        {
+            <tr>
+                <td>
+                    <ul class="mt-1">
+                        <li>@Html.Raw(status)</li>
+                    </ul>
+                </td>
+            </tr>
+        }
+    </table>
+</div>
+
+@if (exception != null)
+{
+    <br />
+    <ul class="mt-1">
+        <li><b>Exception Message:</b> @exception.Message</li>
+        <li><b>Exception Source:</b> @exception.Source</li>
+        <li><b>Exception StackTrace:</b><br /><span style="white-space: pre-line">@exception.StackTrace</span></li>
+    </ul>
+
+    @if (exception.InnerException != null)
+    {
+        <ul class="mt-1">
+            <li><b>Inner Exception Message:</b> @exception.InnerException.Message</li>
+            <li><b>Inner Exception Source:</b> @exception.InnerException.Source</li>
+            <li><b>Inner Exception StackTrace:</b><br /><span style="white-space: pre-line">@exception.InnerException.StackTrace</span></li>
+        </ul>
+    }
+}

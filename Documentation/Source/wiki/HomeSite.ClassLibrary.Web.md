@@ -574,7 +574,7 @@ __Revisions:__
 
 | Contributor | Build | Revison Date | Description |
 |-------------|-------|--------------|-------------|
-| Christopher D. Cavell | 0.0.1 | 05/16/2020 | Initial build |
+| Christopher D. Cavell | 0.0.1 | 05/17/2020 | Initial build |
 
 
 |Fields| |
@@ -596,7 +596,7 @@ Constructor method
 ## 
 #### ValidateModel<M>(M model)
 
-Global model validation method
+Global model validation method (View found in HomeSite.ClassLibrary.Razor)
 
 |Parameters| |
 | - | - |
@@ -689,6 +689,75 @@ Executes after action method execution
 |Parameters| |
 | - | - |
 |context|ActionExecutedContext|
+## 
+
+( [Home](Home) )
+
+
+<a name='HomeSite.ClassLibrary.Web.Mvc.Fillters.ControllerActionUserFilter'></a>
+
+## HomeSite.ClassLibrary.Web.Mvc.Fillters.ControllerActionUserFilter
+Action user filter that runs before and after action method execution
+
+__Revisions:__
+
+| Contributor | Build | Revison Date | Description |
+|-------------|-------|--------------|-------------|
+| Christopher D. Cavell | 0.0.1 | 05/17/2020 | Initial build |
+
+
+### Methods:
+#### ControllerActionUserFilter()
+
+Initializes a new instance
+## 
+#### OnActionExecuting(ActionExecutingContext context)
+
+Executes before action method execution
+
+|Parameters| |
+| - | - |
+|context|ActionExecutingContext|
+## 
+#### OnActionExecuted(ActionExecutedContext context)
+
+Executes after action method execution
+
+|Parameters| |
+| - | - |
+|context|ActionExecutedContext|
+## 
+
+( [Home](Home) )
+
+
+<a name='HomeSite.ClassLibrary.Web.Mvc.Models.ErrorViewModel'></a>
+
+## HomeSite.ClassLibrary.Web.Mvc.Models.ErrorViewModel
+Error view model
+
+__Revisions:__
+
+| Contributor | Build | Revison Date | Description |
+|-------------|-------|--------------|-------------|
+| Christopher D. Cavell | 0.0.1 | 05/17/2020 | Initial build |
+
+
+|Properties| |
+| - | - |
+|StatusCode|int|
+|StatusMessage|string|
+|Exception|Exception|
+|RequestId|string|
+
+### Methods:
+#### ErrorViewModel(int statusCode)
+
+Constructor method
+
+|Parameters| |
+| - | - |
+|statusCode|int|
 ## 
 
 ( [Home](Home) )
@@ -908,43 +977,6 @@ Method to decrypt encrypted string to plain text
 
 #### Returns:
 string 
-## 
-
-( [Home](Home) )
-
-
-<a name='EdLink.NetCore.ClassLibrary.Mvc.Fillters.ControllerActionUserFilter'></a>
-
-## EdLink.NetCore.ClassLibrary.Mvc.Fillters.ControllerActionUserFilter
-Action user filter that runs before and after action method execution
-
-__Revisions:__
-
-| Contributor | Build | Revison Date | Description |
-|-------------|-------|--------------|-------------|
-| Christopher D. Cavell | LDOESVC-261 | 02/21/2020 | Initial build |
-
-
-### Methods:
-#### ControllerActionUserFilter()
-
-Initializes a new instance
-## 
-#### OnActionExecuting(ActionExecutingContext context)
-
-Executes before action method execution
-
-|Parameters| |
-| - | - |
-|context|ActionExecutingContext|
-## 
-#### OnActionExecuted(ActionExecutedContext context)
-
-Executes after action method execution
-
-|Parameters| |
-| - | - |
-|context|ActionExecutedContext|
 ## 
 
 ( [Home](Home) )

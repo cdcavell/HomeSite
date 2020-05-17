@@ -468,7 +468,7 @@
             __Revisions:__~~
             | Contributor | Build | Revison Date | Description |~
             |-------------|-------|--------------|-------------|~
-            | Christopher D. Cavell | 0.0.1 | 05/16/2020 | Initial build |~ 
+            | Christopher D. Cavell | 0.0.1 | 05/17/2020 | Initial build |~ 
             </revision>
         </member>
         <member name="F:HomeSite.ClassLibrary.Web.Mvc.Controllers.WebBaseController`1._logger">
@@ -491,7 +491,7 @@
         </member>
         <member name="M:HomeSite.ClassLibrary.Web.Mvc.Controllers.WebBaseController`1.ValidateModel``1(``0)">
             <summary>
-            Global model validation method
+            Global model validation method (View found in HomeSite.ClassLibrary.Razor)
             </summary>
             <param name="model">Model</param>
             <returns>KeyValuePair&lt;int, string&gt;</returns>
@@ -565,6 +565,67 @@
             </summary>
             <param name="context">ActionExecutedContext</param>
             <method>OnActionExecuted(ActionExecutedContext context)</method>
+        </member>
+        <member name="T:HomeSite.ClassLibrary.Web.Mvc.Fillters.ControllerActionUserFilter">
+            <summary>
+            Action user filter that runs before and after action method execution
+            </summary>
+            <revision>
+            __Revisions:__~~
+            | Contributor | Build | Revison Date | Description |~
+            |-------------|-------|--------------|-------------|~
+            | Christopher D. Cavell | 0.0.1 | 05/17/2020 | Initial build |~ 
+            </revision>
+        </member>
+        <member name="M:HomeSite.ClassLibrary.Web.Mvc.Fillters.ControllerActionUserFilter.#ctor(Microsoft.Extensions.Logging.ILogger{HomeSite.ClassLibrary.Web.Mvc.Fillters.ControllerActionUserFilter})">
+            <summary>
+            Initializes a new instance
+            </summary>
+            <method>ControllerActionUserFilter()</method>
+        </member>
+        <member name="M:HomeSite.ClassLibrary.Web.Mvc.Fillters.ControllerActionUserFilter.OnActionExecuting(Microsoft.AspNetCore.Mvc.Filters.ActionExecutingContext)">
+            <summary>
+            Executes before action method execution
+            </summary>
+            <param name="context">ActionExecutingContext</param>
+            <method>OnActionExecuting(ActionExecutingContext context)</method>
+        </member>
+        <member name="M:HomeSite.ClassLibrary.Web.Mvc.Fillters.ControllerActionUserFilter.OnActionExecuted(Microsoft.AspNetCore.Mvc.Filters.ActionExecutedContext)">
+            <summary>
+            Executes after action method execution
+            </summary>
+            <param name="context">ActionExecutedContext</param>
+            <method>OnActionExecuted(ActionExecutedContext context)</method>
+        </member>
+        <member name="T:HomeSite.ClassLibrary.Web.Mvc.Models.ErrorViewModel">
+            <summary>
+            Error view model
+            </summary>
+            <revision>
+            __Revisions:__~~
+            | Contributor | Build | Revison Date | Description |~
+            |-------------|-------|--------------|-------------|~
+            | Christopher D. Cavell | 0.0.1 | 05/17/2020 | Initial build |~ 
+            </revision>
+        </member>
+        <member name="P:HomeSite.ClassLibrary.Web.Mvc.Models.ErrorViewModel.StatusCode">
+            <value>int</value>
+        </member>
+        <member name="P:HomeSite.ClassLibrary.Web.Mvc.Models.ErrorViewModel.StatusMessage">
+            <value>string</value>
+        </member>
+        <member name="P:HomeSite.ClassLibrary.Web.Mvc.Models.ErrorViewModel.Exception">
+            <value>Exception</value>
+        </member>
+        <member name="P:HomeSite.ClassLibrary.Web.Mvc.Models.ErrorViewModel.RequestId">
+            <value>string</value>
+        </member>
+        <member name="M:HomeSite.ClassLibrary.Web.Mvc.Models.ErrorViewModel.#ctor(System.Int32)">
+            <summary>
+            Constructor method
+            </summary>
+            <param name="statusCode">int</param>
+            <method>ErrorViewModel(int statusCode)</method>
         </member>
         <member name="T:HomeSite.ClassLibrary.Web.Mvc.Models.PageViewModel">
             <summary>
@@ -788,36 +849,5 @@
             <method>Decrypt(string encryptedText)</method>
         </member>
         <!-- Badly formed XML comment ignored for member "M:HomeSite.ClassLibrary.Web.Security.AESGCM.Seed(Microsoft.Extensions.Configuration.IConfiguration)" -->
-        <member name="T:EdLink.NetCore.ClassLibrary.Mvc.Fillters.ControllerActionUserFilter">
-            <summary>
-            Action user filter that runs before and after action method execution
-            </summary>
-            <revision>
-            __Revisions:__~~
-            | Contributor | Build | Revison Date | Description |~
-            |-------------|-------|--------------|-------------|~
-            | Christopher D. Cavell | LDOESVC-261 | 02/21/2020 | Initial build |~ 
-            </revision>
-        </member>
-        <member name="M:EdLink.NetCore.ClassLibrary.Mvc.Fillters.ControllerActionUserFilter.#ctor(Microsoft.Extensions.Logging.ILogger{EdLink.NetCore.ClassLibrary.Mvc.Fillters.ControllerActionUserFilter})">
-            <summary>
-            Initializes a new instance
-            </summary>
-            <method>ControllerActionUserFilter()</method>
-        </member>
-        <member name="M:EdLink.NetCore.ClassLibrary.Mvc.Fillters.ControllerActionUserFilter.OnActionExecuting(Microsoft.AspNetCore.Mvc.Filters.ActionExecutingContext)">
-            <summary>
-            Executes before action method execution
-            </summary>
-            <param name="context">ActionExecutingContext</param>
-            <method>OnActionExecuting(ActionExecutingContext context)</method>
-        </member>
-        <member name="M:EdLink.NetCore.ClassLibrary.Mvc.Fillters.ControllerActionUserFilter.OnActionExecuted(Microsoft.AspNetCore.Mvc.Filters.ActionExecutedContext)">
-            <summary>
-            Executes after action method execution
-            </summary>
-            <param name="context">ActionExecutedContext</param>
-            <method>OnActionExecuted(ActionExecutedContext context)</method>
-        </member>
     </members>
 </doc>

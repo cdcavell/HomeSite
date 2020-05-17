@@ -11,7 +11,7 @@ using System.Linq;
 using System.Net;
 using System.Security.Claims;
 
-namespace EdLink.NetCore.ClassLibrary.Mvc.Fillters
+namespace HomeSite.ClassLibrary.Web.Mvc.Fillters
 {
     /// <summary>
     /// Action user filter that runs before and after action method execution
@@ -20,7 +20,7 @@ namespace EdLink.NetCore.ClassLibrary.Mvc.Fillters
     /// __Revisions:__~~
     /// | Contributor | Build | Revison Date | Description |~
     /// |-------------|-------|--------------|-------------|~
-    /// | Christopher D. Cavell | LDOESVC-261 | 02/21/2020 | Initial build |~ 
+    /// | Christopher D. Cavell | 0.0.1 | 05/17/2020 | Initial build |~ 
     /// </revision>
     [AttributeUsage(AttributeTargets.Class)]
     public class ControllerActionUserFilter : ActionFilterAttribute
