@@ -7,7 +7,7 @@ using Microsoft.Extensions.Logging;
 using System;
 using System.Reflection;
 
-namespace HomeSite.IdentiyServer4
+namespace HomeSite.WebApplication
 {
     /// <summary>
     /// Entry point class
@@ -43,7 +43,7 @@ namespace HomeSite.IdentiyServer4
                 _logger.Information($"Program Started");
                 CreateHostBuilder(args).Build().Run();
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 _logger.Exception(e, $"Program Exception Error");
             }
@@ -75,7 +75,8 @@ namespace HomeSite.IdentiyServer4
                     logging.SetMinimumLevel(Microsoft.Extensions.Logging.LogLevel.Trace);
                     logging.AddConsole();
                     logging.AddApplicationInsights("ikey");
-                    logging.AddEventLog(eventLogSettings => {
+                    logging.AddEventLog(eventLogSettings =>
+                    {
                         eventLogSettings.SourceName = Assembly.GetEntryAssembly().GetName().Name;
                         eventLogSettings.LogName = "Application";
                     });

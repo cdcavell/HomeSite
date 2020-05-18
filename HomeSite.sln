@@ -9,7 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HomeSite.ClassLibrary.Commo
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HomeSite.ClassLibrary.Web", "Source\Libraries\HomeSite.ClassLibrary.Web\HomeSite.ClassLibrary.Web.csproj", "{DF470E73-7E58-4C6F-9C21-5A93FA6FA367}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HomeSite.ClassLibrary.Razor", "Source\Libraries\HomeSite.ClassLibrary.Razor\HomeSite.ClassLibrary.Razor.csproj", "{EB50755C-0E4E-42A6-9994-8B8D471331EF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HomeSite.ClassLibrary.Razor", "Source\Libraries\HomeSite.ClassLibrary.Razor\HomeSite.ClassLibrary.Razor.csproj", "{EB50755C-0E4E-42A6-9994-8B8D471331EF}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HomeSite.WebApplication", "Source\Web\HomeSite.WebApplication\HomeSite.WebApplication.csproj", "{78595DCE-D253-43EB-93A4-9C3165E5A7CE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{EB50755C-0E4E-42A6-9994-8B8D471331EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EB50755C-0E4E-42A6-9994-8B8D471331EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EB50755C-0E4E-42A6-9994-8B8D471331EF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{78595DCE-D253-43EB-93A4-9C3165E5A7CE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{78595DCE-D253-43EB-93A4-9C3165E5A7CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{78595DCE-D253-43EB-93A4-9C3165E5A7CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{78595DCE-D253-43EB-93A4-9C3165E5A7CE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,0 +1,42 @@
+﻿@using HomeSite.ClassLibrary.Web.Mvc.Models
+
+@{
+    PageViewModel pageModel = (PageViewModel)ViewData["PageViewModel"];
+    UserViewModel userModel = (UserViewModel)ViewData["UserViewModel"];
+}
+
+<h1 class="site-heading text-center text-white d-none d-lg-block">
+    <span class="site-heading-lower">Business Casual</span>
+    <span class="site-heading-upper text-primary mb-3">A Free Bootstrap 4 Business Theme</span>
+</h1>
+
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top py-lg-4" id="mainNav">
+    <div class="container">
+        <a class="navbar-brand text-uppercase text-expanded font-weight-bold d-lg-none" href="#">Start Bootstrap</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav mx-auto">
+                <li class="nav-item@((pageModel.Action == "Index" && pageModel.Controller == "Home") ? " active" : string.Empty) px-lg-4">
+                    <a class="nav-link text-uppercase text-expanded" href="~/Home/Index">
+                        Home
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+                <li class="nav-item@((pageModel.Action == "About" && pageModel.Controller == "Home") ? " active" : string.Empty) px-lg-4">
+                    <a class="nav-link text-uppercase text-expanded" href="~/Home/About">About</a>
+                </li>
+                <li class="nav-item@((pageModel.Action == "Products" && pageModel.Controller == "Home") ? " active" : string.Empty) px-lg-4">
+                    <a class="nav-link text-uppercase text-expanded" href="~/Home/Products">Products</a>
+                </li>
+                <li class="nav-item@((pageModel.Action == "Store" && pageModel.Controller == "Home") ? " active" : string.Empty) px-lg-4">
+                    <a class="nav-link text-uppercase text-expanded" href="~/Home/Store">Store</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+

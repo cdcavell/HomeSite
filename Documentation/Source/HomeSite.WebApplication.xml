@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <doc>
     <assembly>
-        <name>HomeSite.IdentiyServer4</name>
+        <name>HomeSite.WebApplication</name>
     </assembly>
     <members>
         <member name="T:HomeSite.IdentiyServer4.Controllers.HomeController">
@@ -31,14 +31,35 @@
             <returns>IActionResult</returns>
             <method>Index()</method>
         </member>
-        <member name="M:HomeSite.IdentiyServer4.Controllers.HomeController.Privacy">
+        <member name="M:HomeSite.IdentiyServer4.Controllers.HomeController.About">
             <summary>
-            Privacy method
+            About method
             </summary>
             <returns>IActionResult</returns>
-            <method>Privacy()</method>
+            <method>About()</method>
         </member>
-        <member name="T:HomeSite.IdentiyServer4.Models.AppSettings.Application">
+        <member name="M:HomeSite.IdentiyServer4.Controllers.HomeController.Products">
+            <summary>
+            Products method
+            </summary>
+            <returns>IActionResult</returns>
+            <method>Products()</method>
+        </member>
+        <member name="M:HomeSite.IdentiyServer4.Controllers.HomeController.Store">
+            <summary>
+            Store method
+            </summary>
+            <returns>IActionResult</returns>
+            <method>Store()</method>
+        </member>
+        <member name="M:HomeSite.IdentiyServer4.Controllers.HomeController.Location">
+            <summary>
+            Location method
+            </summary>
+            <returns>IActionResult</returns>
+            <method>Location()</method>
+        </member>
+        <member name="T:HomeSite.WebApplication.Models.AppSettings.Application">
             <summary>
             Application model
             </summary>
@@ -49,16 +70,16 @@
             | Christopher D. Cavell | 0.0.1 | 05/17/2020 | Initial build |~ 
             </revision>
         </member>
-        <member name="P:HomeSite.IdentiyServer4.Models.AppSettings.Application.Name">
+        <member name="P:HomeSite.WebApplication.Models.AppSettings.Application.Name">
             <value>string</value>
         </member>
-        <member name="P:HomeSite.IdentiyServer4.Models.AppSettings.Application.Version">
+        <member name="P:HomeSite.WebApplication.Models.AppSettings.Application.Version">
             <value>string</value>
         </member>
-        <member name="P:HomeSite.IdentiyServer4.Models.AppSettings.Application.SecretKey">
+        <member name="P:HomeSite.WebApplication.Models.AppSettings.Application.SecretKey">
             <value>string</value>
         </member>
-        <member name="T:HomeSite.IdentiyServer4.Models.AppSettings.AppSettings">
+        <member name="T:HomeSite.WebApplication.Models.AppSettings.AppSettings">
             <summary>
             AppSettings model
             </summary>
@@ -69,10 +90,10 @@
             | Christopher D. Cavell | 0.0.1 | 05/17/2020 | Initial build |~ 
             </revision>
         </member>
-        <member name="P:HomeSite.IdentiyServer4.Models.AppSettings.AppSettings.Application">
+        <member name="P:HomeSite.WebApplication.Models.AppSettings.AppSettings.Application">
             <value>Application</value>
         </member>
-        <member name="T:HomeSite.IdentiyServer4.Program">
+        <member name="T:HomeSite.WebApplication.Program">
             <summary>
             Entry point class
             </summary>
@@ -80,17 +101,17 @@
             __Revisions:__~~
             | Contributor | Build | Revison Date | Description |~
             |-------------|-------|--------------|-------------|~
-            | Christopher D. Cavell | 0.0.1 | 05/16/2020 | Initial build |~ 
+            | Christopher D. Cavell | 0.0.1 | 05/17/2020 | Initial build |~ 
             </revision>
         </member>
-        <member name="M:HomeSite.IdentiyServer4.Program.Main(System.String[])">
+        <member name="M:HomeSite.WebApplication.Program.Main(System.String[])">
             <summary>
             Entry point method
             </summary>
             <param name="args">string[]</param>
             <method>Main(string[] args)</method>
         </member>
-        <member name="M:HomeSite.IdentiyServer4.Program.CreateHostBuilder(System.String[])">
+        <member name="M:HomeSite.WebApplication.Program.CreateHostBuilder(System.String[])">
             <summary>
             Host Builder configuration
             </summary>
@@ -98,7 +119,7 @@
             <returns>IHostBuilder</returns>
             <method>CreateHostBuilder(string[] args)</method>
         </member>
-        <member name="T:HomeSite.IdentiyServer4.Startup">
+        <member name="T:HomeSite.WebApplication.Startup">
             <summary>
             The Startup class configures services and the application's request pipeline&lt;br /&gt;&lt;br /&gt;
             _Services_ are components that are used by the app. For example, a logging component is a service. Code to configure (_or register_) services is added to the ```Startup.ConfigureServices``` method.&lt;br /&gt;&lt;br /&gt;
@@ -111,7 +132,7 @@
             | Christopher D. Cavell | 0.0.1 | 05/17/2020 | Initial commit |~ 
             </revision>
         </member>
-        <member name="M:HomeSite.IdentiyServer4.Startup.#ctor(Microsoft.Extensions.Configuration.IConfiguration,Microsoft.AspNetCore.Hosting.IWebHostEnvironment)">
+        <member name="M:HomeSite.WebApplication.Startup.#ctor(Microsoft.Extensions.Configuration.IConfiguration,Microsoft.AspNetCore.Hosting.IWebHostEnvironment)">
             <summary>
             Class Constructor
             </summary>
@@ -119,14 +140,14 @@
             <param name="webHostEnvironment">IWebHostEnvironment</param>
             <method>Startup(IConfiguration configuration, IWebHostEnvironment webHostEnvironment)</method>
         </member>
-        <member name="M:HomeSite.IdentiyServer4.Startup.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+        <member name="M:HomeSite.WebApplication.Startup.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
             <summary>
             This optional method gets called by the runtime. Use this method to add services to the container.
             </summary>
             <param name="services">IServiceCollection</param>
             <method>ConfigureServices(IServiceCollection services)</method>
         </member>
-        <member name="M:HomeSite.IdentiyServer4.Startup.Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Hosting.IWebHostEnvironment,Microsoft.Extensions.Logging.ILogger{HomeSite.IdentiyServer4.Startup},Microsoft.Extensions.Hosting.IHostApplicationLifetime)">
+        <member name="M:HomeSite.WebApplication.Startup.Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Hosting.IWebHostEnvironment,Microsoft.Extensions.Logging.ILogger{HomeSite.WebApplication.Startup},Microsoft.Extensions.Hosting.IHostApplicationLifetime)">
             <summary>
             This required method gets called by the runtime. Use this method to configure the HTTP request pipeline.
             </summary>
@@ -136,19 +157,19 @@
             <param name="lifetime">IHostApplicationLifetime</param>
             <method>Configure(IApplicationBuilder app, IWebHostEnvironment env, ILogger&lt;Startup&gt; logger, IHostApplicationLifetime lifetime)</method>
         </member>
-        <member name="M:HomeSite.IdentiyServer4.Startup.OnAppStarted">
+        <member name="M:HomeSite.WebApplication.Startup.OnAppStarted">
             <summary>
             Exposed IApplicationLifetime interface method.
             </summary>
             <method>OnAppStarted()</method>
         </member>
-        <member name="M:HomeSite.IdentiyServer4.Startup.OnAppStopping">
+        <member name="M:HomeSite.WebApplication.Startup.OnAppStopping">
             <summary>
             Exposed IApplicationLifetime interface method.
             </summary>
             <method>OnAppStopping()</method>
         </member>
-        <member name="M:HomeSite.IdentiyServer4.Startup.OnAppStopped">
+        <member name="M:HomeSite.WebApplication.Startup.OnAppStopped">
             <summary>
             Exposed IApplicationLifetime interface method.
             </summary>

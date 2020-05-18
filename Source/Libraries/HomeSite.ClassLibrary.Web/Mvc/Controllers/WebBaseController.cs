@@ -24,7 +24,7 @@ namespace HomeSite.ClassLibrary.Web.Mvc.Controllers
     /// | Christopher D. Cavell | 0.0.1 | 05/17/2020 | Initial build |~ 
     /// </revision>
     [Controller]
-    //[Authorize]
+    [Authorize]
     [ServiceFilter(typeof(ControllerActionLogFilter))]
     [ServiceFilter(typeof(ControllerActionUserFilter))]
     [ServiceFilter(typeof(ControllerActionPageFilter))]

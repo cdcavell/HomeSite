@@ -1,0 +1,12 @@
+﻿@using Microsoft.Extensions.Options
+@inject AppSettings appSettings
+
+<footer class="footer fixed-bottom text-faded text-center py-2">
+    <div class="container">
+        <p class="m-0 small">Copyright &copy; @appSettings.Application.Name @DateTime.Now.Year</p>
+    </div>
+</footer>
+
+<!-- Bootstrap core JavaScript -->
+<script src="~/BusinessCasual/vendor/jquery/jquery.min.js"></script>
+<script src="~/BusinessCasual/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>

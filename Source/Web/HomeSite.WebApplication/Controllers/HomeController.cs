@@ -1,4 +1,5 @@
 ﻿using HomeSite.ClassLibrary.Web.Mvc.Controllers;
+using HomeSite.WebApplication.Models.AppSettings;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -38,21 +39,59 @@ namespace HomeSite.IdentiyServer4.Controllers
         /// </summary>
         /// <returns>IActionResult</returns>
         /// <method>Index()</method>
+        [AllowAnonymous]
+        [HttpGet]
         public IActionResult Index()
         {
             return View();
         }
 
         /// <summary>
-        /// Privacy method
+        /// About method
         /// </summary>
         /// <returns>IActionResult</returns>
-        /// <method>Privacy()</method>
-        public IActionResult Privacy()
+        /// <method>About()</method>
+        [AllowAnonymous]
+        [HttpGet]
+        public IActionResult About()
         {
-            //throw new System.Exception("Test Exception");
-            return StatusCode(402);
-            //return View();
+            return View();
+        }
+
+        /// <summary>
+        /// Products method
+        /// </summary>
+        /// <returns>IActionResult</returns>
+        /// <method>Products()</method>
+        [AllowAnonymous]
+        [HttpGet]
+        public IActionResult Products()
+        {
+            return View();
+        }
+
+        /// <summary>
+        /// Store method
+        /// </summary>
+        /// <returns>IActionResult</returns>
+        /// <method>Store()</method>
+        [AllowAnonymous]
+        [HttpGet]
+        public IActionResult Store()
+        {
+            return View();
+        }
+
+        /// <summary>
+        /// Location method
+        /// </summary>
+        /// <returns>IActionResult</returns>
+        /// <method>Location()</method>
+        [AllowAnonymous]
+        [HttpGet]
+        public IActionResult Location()
+        {
+            return View();
         }
     }
 }

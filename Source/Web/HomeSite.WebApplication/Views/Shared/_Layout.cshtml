@@ -1,0 +1,23 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <partial name="../BusinessCasual/_head.cshtml" />
+    <link href="~/css/override.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <partial name="../BusinessCasual/_navigate.cshtml" />
+
+    @RenderBody()
+
+    <partial name="../BusinessCasual/_footer.cshtml" />
+
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @RenderSection("Scripts", required: false)
+
+</body>
+</html>

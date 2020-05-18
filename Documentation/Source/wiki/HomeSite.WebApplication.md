@@ -29,9 +29,30 @@ Index method
 #### Returns:
 IActionResult 
 ## 
-#### Privacy()
+#### About()
 
-Privacy method
+About method
+
+#### Returns:
+IActionResult 
+## 
+#### Products()
+
+Products method
+
+#### Returns:
+IActionResult 
+## 
+#### Store()
+
+Store method
+
+#### Returns:
+IActionResult 
+## 
+#### Location()
+
+Location method
 
 #### Returns:
 IActionResult 
@@ -40,9 +61,9 @@ IActionResult
 ( [Home](Home) )
 
 
-<a name='HomeSite.IdentiyServer4.Models.AppSettings.Application'></a>
+<a name='HomeSite.WebApplication.Models.AppSettings.Application'></a>
 
-## HomeSite.IdentiyServer4.Models.AppSettings.Application
+## HomeSite.WebApplication.Models.AppSettings.Application
 Application model
 
 __Revisions:__
@@ -62,9 +83,9 @@ __Revisions:__
 ( [Home](Home) )
 
 
-<a name='HomeSite.IdentiyServer4.Models.AppSettings'></a>
+<a name='HomeSite.WebApplication.Models.AppSettings'></a>
 
-## HomeSite.IdentiyServer4.Models.AppSettings
+## HomeSite.WebApplication.Models.AppSettings
 AppSettings model
 
 __Revisions:__
@@ -82,16 +103,16 @@ __Revisions:__
 ( [Home](Home) )
 
 
-<a name='HomeSite.IdentiyServer4.Program'></a>
+<a name='HomeSite.WebApplication.Program'></a>
 
-## HomeSite.IdentiyServer4.Program
+## HomeSite.WebApplication.Program
 Entry point class
 
 __Revisions:__
 
 | Contributor | Build | Revison Date | Description |
 |-------------|-------|--------------|-------------|
-| Christopher D. Cavell | 0.0.1 | 05/16/2020 | Initial build |
+| Christopher D. Cavell | 0.0.1 | 05/17/2020 | Initial build |
 
 
 ### Methods:
@@ -118,9 +139,9 @@ IHostBuilder
 ( [Home](Home) )
 
 
-<a name='HomeSite.IdentiyServer4.Startup'></a>
+<a name='HomeSite.WebApplication.Startup'></a>
 
-## HomeSite.IdentiyServer4.Startup
+## HomeSite.WebApplication.Startup
 The Startup class configures services and the application's request pipeline<br /><br /> _Services_ are components that are used by the app. For example, a logging component is a service. Code to configure (_or register_) services is added to the ```Startup.ConfigureServices``` method.<br /><br /> The request handling pipeline is composed as a series of _middleware_ components. For example, a middleware might handle requests for static files or redirect HTTP requests to HTTPS. Each middleware performs asynchronous operations on an ```HttpContext``` and then either invokes the next middleware in the pipeline or terminates the request. Code to configure the request handling pipeline is added to the ```Startup.Configure``` method.
 
 __Revisions:__
